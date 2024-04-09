@@ -1,0 +1,78 @@
+.app-header {
+  &__container {
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__slogan {
+    font-size: 16px;
+    color: #0089cd;
+    max-width: 295px;
+  }
+
+  &__btn {
+    padding: 10px 15px;
+    background-color: #fff;
+    border: 2px solid #55a831;
+    border-radius: 16px;
+
+    display: flex;
+
+    &-text {
+      font-size: 16px;
+      margin-left: 10px;
+      font-weight: 700;
+      color: #55a831;
+      text-align: left;
+    }
+  }
+
+  &__working-time {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      padding-right: 20px;
+      width: 50px;
+      height: 30px;
+    }
+
+    &-text {
+      color: #333333;
+      font-size: 18px;
+      line-height: 26px;
+
+      &-accent {
+        color: #000;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__phone {
+    display: flex;
+    align-items: center;
+
+    &-img {
+      margin-right: 10px;
+      margin-top: 5px;
+      align-self: start;
+    }
+
+    &-text {
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 29px;
+    }
+
+    &-link {
+      font-size: 15px;
+      line-height: 25px;
+      font-weight: 400;
+      color: rgb(0, 137, 205);
+      text-decoration: underline;
+    }
+  }
+}
