@@ -1,5 +1,4 @@
 .first-section {
-  border: 1px solid #ee1505;
   background-image: url('./img/bg.png');
   height: 640px;
 
@@ -7,9 +6,8 @@
     height: 640px;
     display: flex;
     justify-content: space-between;
-    border: 1px solid #150df5;
   }
-  
+
   &__left {
     max-width: 560px;
     width: 100%;
@@ -73,6 +71,9 @@
   }
 
   &__right {
-    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

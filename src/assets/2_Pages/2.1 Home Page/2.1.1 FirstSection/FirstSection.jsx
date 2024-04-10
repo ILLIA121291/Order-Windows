@@ -1,3 +1,4 @@
+import ContactForm from '../../../1_Components/1.3 ContactForm/ContactForm';
 import './FirstSection.scss';
 
 
@@ -17,7 +18,7 @@ const FirstSection = () => {
         <li className='first-section__left-item' >Garbage<br/>removal</li>
       </ul>
       </div>
-      <div className='first-section__right'>Right</div>
+      <div className='first-section__right'><ContactForm/></div>
     </div>
     </section>)
 };

@@ -1,0 +1,57 @@
+.guarantee-section {
+  background-color: #0089cd;
+
+  &__header {
+    padding-top: 50px;
+    &-titel {
+      margin-top: 20px;
+      margin-bottom: 10px;
+
+      font-size: 30px;
+      line-height: 42px;
+      text-align: center;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    &-decor {
+      height: 2px;
+      background: url('./resources/img/header_sub.png') no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__list {
+    margin-top: 80px;
+    padding-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px 0px;
+  }
+
+  &__item {
+    width: 360px;
+    height: 125px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-img {
+      width: 70px;
+      height: 70px;
+    }
+
+    &-titel {
+      width: 200px;
+      margin-top: 30px;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
+}

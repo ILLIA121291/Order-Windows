@@ -1,0 +1,19 @@
+.heder-section {
+  &__titel {
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    font-size: 30px;
+    line-height: 42px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #333333;
+  }
+
+  &__decor {
+    height: 2px;
+    background: url('./resources/line.png') no-repeat;
+    background-position: center;
+  }
+}
