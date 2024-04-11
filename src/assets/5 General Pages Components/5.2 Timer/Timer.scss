@@ -1,0 +1,59 @@
+.timer {
+  width: 360px;
+  height: 150px;
+  padding: 20px;
+
+  border: 1px solid #000;
+  border-radius: 10px;
+
+  background: white;
+
+  &_title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+
+  &_contaner {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_block {
+
+      font-size: 18px;
+      font-weight: 300;
+      text-align: center;
+
+      &_num {
+        display: block;
+
+        background: #646060;
+        padding: 10px 0px;
+
+        border-radius: 10px;
+
+        color: white;
+        font-size: 40px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &_controls {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &_btn {
+      padding: 10px 20px;
+      margin: 0 15px;
+      font-size: 20px;
+      border-radius: 5px;
+      border: 1px solid #000;
+    }
+  }
+}

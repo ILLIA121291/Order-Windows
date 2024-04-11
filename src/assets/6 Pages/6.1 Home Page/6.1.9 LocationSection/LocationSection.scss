@@ -1,0 +1,35 @@
+.location-section {
+  &__container {
+    padding-bottom: 80px;
+  }
+
+  &__block {
+    margin-top: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__goole-map {
+    width: 550px;
+    height: 450px;
+    overflow: hidden;
+    margin-top: 30px;
+  }
+
+  &__list {
+    width: 450px;
+  }
+
+  &__item {
+    font-size: 18px;
+    font-weight: 600;
+
+    &-accent {
+      display: block;
+      color: rgb(0, 137, 205);
+      font-size: 15px;
+      line-height: 16.5px;
+      margin: 20px 0px 20px;
+    }
+  }
+}

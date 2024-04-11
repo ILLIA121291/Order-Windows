@@ -1,0 +1,43 @@
+.app-footer {
+  &__still-questions {
+    background-color: rgb(0, 137, 205);
+    padding: 60px 0px;
+
+    &-titel {
+      color: white;
+      font-size: 30px;
+      font-weight: 500;
+      line-height: 33px;
+      text-align: center;
+    }
+
+    &-link {
+      text-decoration: underline;
+      font-weight: 600;
+
+      margin-left: 40px;
+    }
+  }
+}
+
+.app-footer-footer {
+  padding: 40px 0px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__titel {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 25.71px;
+    text-align: end;
+
+    &-accent {
+      color: rgb(0, 137, 205);
+      font-size: 14px;
+      text-decoration: underline;
+    }
+  }
+}
