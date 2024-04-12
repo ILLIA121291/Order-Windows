@@ -17,7 +17,7 @@ const LocationSection = () => {
         <SectionHedar titel={'how to find us'} />
         <div className="location-section__block">
           <div className="location-section__goole-map">
-            <GoogleMap />
+            {/* <GoogleMap /> */}
           </div>
           <ul className="location-section__list">
             {arrLocationInfo.map((info, i) => {
