@@ -22,8 +22,8 @@
 .product-demo {
   margin-top: 40px;
   display: flex;
-  border-radius: 20px;
-
+  justify-content: center;
+  
   &__product {
     margin-bottom: 60px;
 
@@ -50,6 +50,7 @@
     margin-bottom: 25px;
     font-size: 20px;
     font-weight: 700;
+    text-transform: uppercase;
 
     &-cold {
       color: rgb(0, 137, 205);

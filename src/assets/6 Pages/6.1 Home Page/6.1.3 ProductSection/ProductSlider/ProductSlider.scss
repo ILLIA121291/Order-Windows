@@ -7,6 +7,9 @@
   &_window {
     width: 1070px;
     overflow: hidden;
+    display: flex;
+
+
 
     &_slides_img_line {
       width: fit-content;
@@ -15,7 +18,7 @@
       transition: transform 0.5s;
 
       &_slide {
-        width: 200px;
+        width: 195px;
         height: 200px;
         display: flex;
         justify-content: center;

@@ -1,33 +1,11 @@
 import './ProductSlider.scss';
 import { useState } from 'react';
 
-import woodWindows from '../resources/icons/1.png';
-import aluminumWindows from '../resources/icons/2.png';
-import plasticWindows from '../resources/icons/3.png';
-import panoramicWindows from '../resources/icons/4.png';
-import takeOutWindows from '../resources/icons/5.png';
+import mainProductsData from '../../../../4 General Media-Info Recourses/mainProductsData';
 
-const arrWindows = [
-  { titel: 'Wood Windows', img: woodWindows },
-  { titel: 'Aluminum Windows', img: aluminumWindows },
-  { titel: 'Plastic Windows', img: plasticWindows },
-  { titel: 'Panoramic Windows', img: panoramicWindows },
-  { titel: 'Take out Windows', img: takeOutWindows },
-  { titel: 'Wood Windows', img: woodWindows },
-  { titel: 'Aluminum Windows', img: aluminumWindows },
-  { titel: 'Plastic Windows', img: plasticWindows },
-  { titel: 'Panoramic Windows', img: panoramicWindows },
-  { titel: 'Take out Windows', img: takeOutWindows },
-  { titel: 'Wood Windows', img: woodWindows },
-  { titel: 'Aluminum Windows', img: aluminumWindows },
-  { titel: 'Plastic Windows', img: plasticWindows },
-  { titel: 'Panoramic Windows', img: panoramicWindows },
-  { titel: 'Take out Windows', img: takeOutWindows },
-];
-
-const ProductSlider = () => {
-  const arrImg = arrWindows;
-  const widthWindowSlider = 193;
+const ProductSlider = props => {
+  const arrImg = mainProductsData.slice(1);
+  const widthWindowSlider = 170;
 
   const [offset, setOffset] = useState(0);
 
@@ -50,9 +28,9 @@ const ProductSlider = () => {
   const imgsDisplay = arrImg.map((window, index) => {
     return (
       <li key={index} className="slider_window_slides_img_line_slide product-category__item">
-        <button className="product-category__item-btn">
-          <img className="product-category__item-img" src={window.img} alt="" />
-          <h3 className="product-category__item-titel">{window.titel}</h3>
+        <button className="product-category__item-btn" onClick={() => props.setDisplayTab(index + 1)}>
+          <img className="product-category__item-img" src={window.icons} alt="" />
+          <h3 className="product-category__item-titel">{window.product}</h3>
         </button>
       </li>
     );
