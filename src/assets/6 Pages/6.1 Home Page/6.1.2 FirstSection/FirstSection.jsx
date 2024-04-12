@@ -19,7 +19,7 @@ const FirstSection = () => {
         <li className='first-section__left-item' >Garbage<br/>removal</li>
       </ul>
       </div>
-      <div className='first-section__right'><ContactForm/></div>
+      <div className='first-section__right'><ContactForm type={'callMeasure'}/></div>
     </div>
     </section>)
 };

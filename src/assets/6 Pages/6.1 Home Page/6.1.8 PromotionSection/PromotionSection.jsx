@@ -13,7 +13,7 @@ const PromotionSection = () => {
           </h2>
           <Timer deadline={'2024-11-18T00:00:00'} />
         </div>
-        <ContactForm />
+        <ContactForm type={'callMeasure'} />
       </div>
     </section>
   );

@@ -1,25 +1,28 @@
 import './AppFooter.scss';
 import logo from '../3.2 AppHeader/img/logo.png';
 
-const AppFooter = () => {
+const AppFooter = props => {
   return (
     <footer className="app-footer">
-      <StillQuestions />
+      <StillQuestions setModalWindowContactForm={props.setModalWindowContactForm} />
       <Footer />
     </footer>
   );
 };
 
-const StillQuestions = () => {
+const StillQuestions = props => {
   return (
     <div className="app-footer__still-questions">
       <div className="general-container app-footer__still-questions__container">
         <h3 className="app-footer__still-questions-titel">
           {' '}
           Still have questions?
-          <a className="app-footer__still-questions-link" href="#">
+          <button
+            className="app-footer__still-questions-btn"
+            onClick={() => props.setModalWindowContactForm({ type: 'callMeBack', modalState: true })}
+          >
             Ask our specialist
-          </a>
+          </button>
         </h3>
       </div>
     </div>

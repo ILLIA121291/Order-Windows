@@ -64,7 +64,7 @@ const FinishingMaterial = () => {
           );
         })}
       </ul>
-      <ContactForm />
+      <ContactForm type={'callMeasure'}/>
     </div>
   );
 };
