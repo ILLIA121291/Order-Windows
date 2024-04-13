@@ -6,8 +6,8 @@ import useHttp from '../../2 Server Components/2.1 useHttp/useHttp';
 const ContactForm = props => {
   let initData;
 
-  if (props.order) {
-    initData = { ...props.order, action: 'Customer order', customerName: '', customerPhone: '' };
+  if (props.orderData) {
+    initData = { ...props.orderData, action: 'Customer order', customerName: '', customerPhone: '' };
   } else {
     initData = { action: '', customerName: '', customerPhone: '' };
   }
@@ -71,18 +71,22 @@ const ContactForm = props => {
         setProcess('wating'), setCustomerData({ action: formText.action, customerName: '', customerPhone: '' });
         setSendFormBtnState(false);
         setInputDisabled(false);
-        if (props.setModalState) {
-          props.setModalState(modalData => {
-            return { ...modalData, modalState: false };
+        if (props.setModalWindowState) {
+          props.setModalWindowState(modalWindowState => {
+            return { ...modalWindowState, display: false };
           });
-        }
-
-        if (props.setModalStateTwo) {
-          props.setModalStateTwo(false);
         }
 
         if (props.setFromDisplayBalconCalculator) {
           props.setFromDisplayBalconCalculator('Balckon type');
+          props.setOrderBalcon({
+            action: 'Customer order balcon',
+            balkonType: 0,
+            balkonWidth: '',
+            balkonHeight: '',
+            glazingType: 'Wooden glazing',
+            profileType: '',
+          });
         }
       }, 5000);
     } else {

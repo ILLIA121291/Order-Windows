@@ -4,7 +4,7 @@ import logo from '../3.2 AppHeader/img/logo.png';
 const AppFooter = props => {
   return (
     <footer className="app-footer">
-      <StillQuestions setModalWindowContactForm={props.setModalWindowContactForm} />
+      <StillQuestions setModalWindowState={props.setModalWindowState} />
       <Footer />
     </footer>
   );
@@ -19,7 +19,16 @@ const StillQuestions = props => {
           Still have questions?
           <button
             className="app-footer__still-questions-btn"
-            onClick={() => props.setModalWindowContactForm({ type: 'callMeBack', modalState: true })}
+            onClick={() =>
+              props.setModalWindowState(modalWindowState => {
+                return {
+                  ...modalWindowState,
+                  component: 'ContactForm',
+                  componentType: 'callMeBack',
+                  display: true,
+                };
+              })
+            }
           >
             Ask our specialist
           </button>

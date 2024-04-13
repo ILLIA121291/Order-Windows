@@ -4,7 +4,7 @@ import callBtn from './img/edit.png';
 import clock from './img/clock.png';
 import phone from './img/phone.png';
 
-const AppHeader = ({ setModalWindowContactForm }) => {
+const AppHeader = props => {
   return (
     <header className="app-header">
       <div className="general-container app-header__container">
@@ -12,7 +12,19 @@ const AppHeader = ({ setModalWindowContactForm }) => {
           <img className="app-header__logo-img" src={logo} alt="Company logo" />
         </div>
         <h1 className="app-header__slogan">Glazing of balconies and loggias in New York and the surrounding area New York</h1>
-        <button className="app-header__btn" onClick={() => setModalWindowContactForm({ type: 'callMeasure', modalState: true })}>
+        <button
+          className="app-header__btn"
+          onClick={() =>
+            props.setModalWindowState(modalWindowState => {
+              return {
+                ...modalWindowState,
+                component: 'ContactForm',
+                componentType: 'callMeasure',
+                display: true,
+              };
+            })
+          }
+        >
           <img className="app-header__btn-img" src={callBtn} alt="measurer call button" />
           <p className="app-header__btn-text">
             CALL <br />
@@ -35,7 +47,16 @@ const AppHeader = ({ setModalWindowContactForm }) => {
             <a
               className="app-header__phone-link"
               href="#"
-              onClick={() => setModalWindowContactForm({ type: 'callMeBack', modalState: true })}
+              onClick={() =>
+                props.setModalWindowState(modalWindowState => {
+                  return {
+                    ...modalWindowState,
+                    component: 'ContactForm',
+                    componentType: 'callMeBack',
+                    display: true,
+                  };
+                })
+              }
             >
               Request call back
             </a>

@@ -46,9 +46,10 @@ const BalconCalculator = props => {
       displyForm = (
         <ContactForm
           type={'callMeasure'}
-          order={orderBalcon}
-          setModalStateTwo={props.setModalState}
+          orderData={orderBalcon}
+          setModalWindowState={props.setModalWindowState}
           setFromDisplayBalconCalculator={setFromDisplay}
+          setOrderBalcon={setOrderBalcon}
         />
       );
       break;
@@ -71,12 +72,12 @@ const BalconTypeForm = props => {
         {arrBalkonIcons.map((icons, index) => {
           return (
             <li
+              className={props.orderBalcon.balkonType == index ? 'balkon-type__icon-item-active' : 'balkon-type__icon-item'}
               onClick={() =>
                 props.setOrderBalcon(orderBalcon => {
                   return { ...orderBalcon, balkonType: index };
                 })
               }
-              className="balkon-calculator__icon-item"
               key={index}
             >
               <img className="balkon-type__icon-img" src={icons} alt="balkon icon" />

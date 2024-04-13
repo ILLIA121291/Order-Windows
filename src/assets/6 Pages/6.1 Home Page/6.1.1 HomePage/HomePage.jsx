@@ -13,7 +13,7 @@ const HomePage = (props) => {
   return (
     <div>
       <FirstSection />
-      <ProductSection setModalWindowBalconCalculator={props.setModalWindowBalconCalculator}/>
+      <ProductSection setModalWindowState={props.setModalWindowState}/>
       <FinishingSection />
       <GallerySection />
       <GuaranteeSection />

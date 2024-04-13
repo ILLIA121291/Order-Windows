@@ -2,8 +2,6 @@ import './ProductSection.scss';
 
 import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
 
-import cold from './resources/img_cold.png';
-import warm from './resources/img_warm.png';
 import ProductSlider from './ProductSlider/ProductSlider';
 import { useState } from 'react';
 
@@ -17,7 +15,7 @@ const ProductSection = props => {
       <div className="general-container product-section__container">
         <SectionHedar titel={'Glazing of balconies and loggias'} />
         <ProductSlider setDisplayTab={setDisplayTab} displayTab={displayTab} />
-        <ProductDemo displayTab={displayTab} setModalWindowBalconCalculator={props.setModalWindowBalconCalculator} />
+        <ProductDemo displayTab={displayTab} setModalWindowState={props.setModalWindowState} />
       </div>
     </section>
   );
@@ -50,7 +48,14 @@ const ProductDemo = props => {
                 <br />
                 turnkey with installation
               </p>
-              <button className="product-demo__calculate-btn" onClick={() => props.setModalWindowBalconCalculator(true)}>
+              <button
+                className="product-demo__calculate-btn"
+                onClick={() =>
+                  props.setModalWindowState(modalWindowState => {
+                    return { ...modalWindowState, component: 'BalconCalculator', closeOverlay: false, display: true };
+                  })
+                }
+              >
                 CALCULATE PRICE
               </button>
             </div>
