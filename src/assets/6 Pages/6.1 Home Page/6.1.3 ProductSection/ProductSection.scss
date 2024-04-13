@@ -1,29 +1,8 @@
-.product-category {
-  margin-top: 100px;
-  display: flex;
-
-  &__item-btn {
-    width: 100px;
-    background: transparent;
-  }
-
-  &__item-img {
-    height: 100px;
-  }
-
-  &__item-titel {
-    font-size: 18px;
-    color: rgb(51, 122, 183);
-    text-decoration: underline;
-    text-align: center;
-  }
-}
-
 .product-demo {
   margin-top: 40px;
   display: flex;
   justify-content: center;
-  
+
   &__product {
     margin-bottom: 60px;
 

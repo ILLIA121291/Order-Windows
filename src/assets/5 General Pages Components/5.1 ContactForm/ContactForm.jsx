@@ -4,6 +4,14 @@ import { useEffect, useState } from 'react';
 import useHttp from '../../2 Server Components/2.1 useHttp/useHttp';
 
 const ContactForm = props => {
+  let initData;
+
+  if (props.order) {
+    initData = { ...props.order, action: 'Customer order', customerName: '', customerPhone: '' };
+  } else {
+    initData = { action: '', customerName: '', customerPhone: '' };
+  }
+
   const callMeasure = {
     action: 'call measure',
     titelSmall: 'Book your free',
@@ -31,8 +39,9 @@ const ContactForm = props => {
       break;
   }
 
-  const [customerData, setCustomerData] = useState({ action: '', customerName: '', customerPhone: '' });
+  const [customerData, setCustomerData] = useState(initData);
   const [sendFromBtnState, setSendFormBtnState] = useState(false);
+  const [inputDisabled, setInputDisabled] = useState(false);
 
   const { request, process, setProcess } = useHttp();
 
@@ -55,14 +64,25 @@ const ContactForm = props => {
 
     if (customerData.customerName != '' && customerData.customerPhone != '') {
       setSendFormBtnState(true);
+      setInputDisabled(true);
       postCustomerData(customerData);
+
       setTimeout(() => {
         setProcess('wating'), setCustomerData({ action: formText.action, customerName: '', customerPhone: '' });
         setSendFormBtnState(false);
+        setInputDisabled(false);
         if (props.setModalState) {
           props.setModalState(modalData => {
             return { ...modalData, modalState: false };
           });
+        }
+
+        if (props.setModalStateTwo) {
+          props.setModalStateTwo(false);
+        }
+
+        if (props.setFromDisplayBalconCalculator) {
+          props.setFromDisplayBalconCalculator('Balckon type');
         }
       }, 5000);
     } else {
@@ -146,6 +166,7 @@ const ContactForm = props => {
           className="contact-form__input"
           type="text"
           name="customerName"
+          disabled={inputDisabled}
           placeholder="Enter your name"
           value={customerData.customerName}
           onChange={e =>
@@ -169,6 +190,7 @@ const ContactForm = props => {
           type="text"
           name="customerPhone"
           placeholder="Enter your phone number"
+          disabled={inputDisabled}
           value={customerData.customerPhone}
           onChange={e =>
             setCustomerData(customerData => {

@@ -9,11 +9,11 @@ import PaymentSection from '../6.1.7 PaymentSection/PaymentSection';
 import PromotionSection from '../6.1.8 PromotionSection/PromotionSection';
 import LocationSection from '../6.1.9 LocationSection/LocationSection';
 
-const HomePage = () => {
+const HomePage = (props) => {
   return (
     <div>
       <FirstSection />
-      <ProductSection />
+      <ProductSection setModalWindowBalconCalculator={props.setModalWindowBalconCalculator}/>
       <FinishingSection />
       <GallerySection />
       <GuaranteeSection />

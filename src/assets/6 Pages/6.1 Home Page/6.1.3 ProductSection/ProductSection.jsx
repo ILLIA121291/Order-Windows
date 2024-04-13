@@ -9,15 +9,15 @@ import { useState } from 'react';
 
 import mainProductsData from '../../../4 General Media-Info Recourses/mainProductsData';
 
-const ProductSection = () => {
+const ProductSection = props => {
   const [displayTab, setDisplayTab] = useState(0);
 
   return (
     <section className="product-section">
       <div className="general-container product-section__container">
         <SectionHedar titel={'Glazing of balconies and loggias'} />
-        <ProductSlider setDisplayTab={setDisplayTab} />
-        <ProductDemo displayTab={displayTab} />
+        <ProductSlider setDisplayTab={setDisplayTab} displayTab={displayTab} />
+        <ProductDemo displayTab={displayTab} setModalWindowBalconCalculator={props.setModalWindowBalconCalculator} />
       </div>
     </section>
   );
@@ -50,7 +50,9 @@ const ProductDemo = props => {
                 <br />
                 turnkey with installation
               </p>
-              <button className="product-demo__calculate-btn">CALCULATE PRICE</button>
+              <button className="product-demo__calculate-btn" onClick={() => props.setModalWindowBalconCalculator(true)}>
+                CALCULATE PRICE
+              </button>
             </div>
           </div>
         );

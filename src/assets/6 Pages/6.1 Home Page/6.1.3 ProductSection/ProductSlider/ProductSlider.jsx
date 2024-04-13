@@ -25,12 +25,14 @@ const ProductSlider = props => {
     }
   };
 
-  const imgsDisplay = arrImg.map((window, index) => {
+  const imgsDisplay = arrImg.map((product, index) => {
+    const activeProduct = props.displayTab == index + 1 ? 'slider-window__item-titel-active' : 'slider-window__item-titel';
+
     return (
-      <li key={index} className="slider_window_slides_img_line_slide product-category__item">
-        <button className="product-category__item-btn" onClick={() => props.setDisplayTab(index + 1)}>
-          <img className="product-category__item-img" src={window.icons} alt="" />
-          <h3 className="product-category__item-titel">{window.product}</h3>
+      <li key={index} className="slider-window__item">
+        <button className="slider-window__item-btn" onClick={() => props.setDisplayTab(index + 1)}>
+          <img className="slider-window__item-img" src={product.icons} alt="" />
+          <h3 className={activeProduct}>{product.product}</h3>
         </button>
       </li>
     );
@@ -39,25 +41,25 @@ const ProductSlider = props => {
   return (
     <div className="slider">
       <button
-        className="slider_window_change_btns slider_btn_previous_slide"
+        className="slider__change-btns slider-btn__previous-slide"
         onClick={() => {
           previousSlide();
         }}
       >
-        <span className="slider_btn_previous_slide_img"></span>
+        <span className="slider-btn__previous-slide-img"></span>
       </button>
-      <div className="slider_window">
-        <ul className="slider_window_slides_img_line" style={{ transform: `translateX(-${offset}px)` }}>
+      <div className="slider-window">
+        <ul className="slider-window__list" style={{ transform: `translateX(-${offset}px)` }}>
           {imgsDisplay}
         </ul>
       </div>
       <button
-        className="slider_window_change_btns slider_btn_next_slide"
+        className="slider__change-btns slider-btn__next-slide"
         onClick={() => {
           nextSlide();
         }}
       >
-        <span className="slider_btn_next_slide_img"></span>
+        <span className="slider-btn__next-slide-img"></span>
       </button>
     </div>
   );
