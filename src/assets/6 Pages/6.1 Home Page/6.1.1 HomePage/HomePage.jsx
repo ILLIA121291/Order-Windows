@@ -9,13 +9,13 @@ import PaymentSection from '../6.1.7 PaymentSection/PaymentSection';
 import PromotionSection from '../6.1.8 PromotionSection/PromotionSection';
 import LocationSection from '../6.1.9 LocationSection/LocationSection';
 
-const HomePage = (props) => {
+const HomePage = props => {
   return (
     <div>
       <FirstSection />
-      <ProductSection setModalWindowState={props.setModalWindowState}/>
+      <ProductSection setModalWindowState={props.setModalWindowState} />
       <FinishingSection />
-      <GallerySection />
+      <GallerySection setModalWindowState={props.setModalWindowState} />
       <GuaranteeSection />
       <PaymentSection />
       <PromotionSection />

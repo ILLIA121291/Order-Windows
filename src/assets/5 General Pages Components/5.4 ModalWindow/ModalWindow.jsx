@@ -2,10 +2,13 @@ import './ModalWindow.scss';
 
 import ContactForm from '../5.1 ContactForm/ContactForm';
 import BalconCalculator from '../5.5 BalconCalculator/BalconCalculator';
-import { useEffect } from 'react';
+
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
 const ModalWindow = ({ modalWindowState, setModalWindowState }) => {
   const { component, componentType, display, closeOverlay, closeEscapeBtn } = modalWindowState;
+
+  display ? disablePageScroll() : enablePageScroll();
 
   let displayComponent;
 
@@ -16,20 +19,21 @@ const ModalWindow = ({ modalWindowState, setModalWindowState }) => {
     case 'BalconCalculator':
       displayComponent = <BalconCalculator setModalWindowState={setModalWindowState} />;
       break;
+    case 'DisplayImage':
+      displayComponent = <img src={componentType} alt="Display image" />;
+      break;
     default:
       displayComponent = <p>No component</p>;
       break;
   }
 
-  const openModalWindow = () => {
-    setModalWindowState(modalWindowState => {
-      return { ...modalWindowState, display: true };
-    });
-  };
-
   const closeModalWindow = () => {
-    setModalWindowState(modalWindowState => {
-      return { ...modalWindowState, display: false };
+    setModalWindowState({
+      component: '',
+      componentType: '',
+      display: false,
+      closeOverlay: true,
+      closeEscapeBtn: true,
     });
   };
 

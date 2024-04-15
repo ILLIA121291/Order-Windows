@@ -13,5 +13,17 @@
     width: 270px;
     height: 270px;
     overflow: hidden;
+    position: relative;
+  }
+
+  &__img-zoom {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    opacity: 0;
+
+    &-visible {
+      opacity: 1;
+    }
   }
 }

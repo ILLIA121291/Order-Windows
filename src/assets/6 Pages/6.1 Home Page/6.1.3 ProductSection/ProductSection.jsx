@@ -30,7 +30,7 @@ const ProductDemo = props => {
         const titelColor = index == 0 ? 'product-demo__titel-cold' : 'product-demo__titel-warm';
 
         return (
-          <div className={`product-demo__product ${bdColor}`} key={index}>
+          <div className={`product-demo__product ${bdColor} `} key={index}>
             <h4 className={`product-demo__titel ${titelColor}`}>{titel}</h4>
             <img className="product-demo__img" src={img} alt={titel} />
             <ul className="product-demo__list">

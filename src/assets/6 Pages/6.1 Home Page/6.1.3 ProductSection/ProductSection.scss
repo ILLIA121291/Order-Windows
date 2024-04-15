@@ -106,3 +106,19 @@
     }
   }
 }
+
+// Animation 
+
+.faded {
+  animation-name: faded;
+  animation-duration: 1500ms;
+}
+
+@keyframes faded {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
