@@ -1,5 +1,6 @@
-import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
 import './GuaranteeSection.scss';
+import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+const textGuaranteeSection = mainTextApp.textHomePage.textGuaranteeSection;
 
 import Img_1 from './resources/img/1.png';
 import Img_2 from './resources/img/2.png';
@@ -8,14 +9,7 @@ import Img_4 from './resources/img/4.png';
 import Img_5 from './resources/img/5.png';
 import Img_6 from './resources/img/6.png';
 
-const arrImg = [
-  { img: Img_1, titel: 'High quality' },
-  { img: Img_2, titel: 'Turnkey work' },
-  { img: Img_3, titel: 'Installation in short lines' },
-  { img: Img_4, titel: 'Price from the manufacturer' },
-  { img: Img_5, titel: 'Free measurement and consultation' },
-  { img: Img_6, titel: 'Warmth and comfort on the balcony' },
-];
+const arrImg = [Img_1, Img_2, Img_3, Img_4, Img_5, Img_6];
 
 const GuaranteeSection = () => {
   return (
@@ -26,8 +20,8 @@ const GuaranteeSection = () => {
           {arrImg.map((img, i) => {
             return (
               <li className="guarantee-section__item" key={i}>
-                <img className="guarantee-section__item-img" src={img.img} alt={img.titel} />
-                <h4 className="guarantee-section__item-titel">{img.titel}</h4>
+                <img className="guarantee-section__item-img" src={img} alt={textGuaranteeSection.titelsSmall[i]} />
+                <p className="guarantee-section__item-titel">{textGuaranteeSection.titelsSmall[i]}</p>
               </li>
             );
           })}
@@ -40,7 +34,7 @@ const GuaranteeSection = () => {
 const GuaranteeHeader = () => {
   return (
     <header className="guarantee-section__header">
-      <h2 className="guarantee-section__header-titel">We guarantee you</h2>
+      <h2 className="guarantee-section__header-titel">{textGuaranteeSection.titel}</h2>
       <div className="guarantee-section__header-decor"></div>
     </header>
   );

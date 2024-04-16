@@ -3,9 +3,12 @@ import './FinishingSection.scss';
 import ContactForm from '../../../5 General Pages Components/5.1 ContactForm/ContactForm';
 import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
 
-import mainFinishingData from '../../../4 General Media-Info Recourses/mainFinishingData';
 import { useState } from 'react';
 import { ifDotAddZeroToPrice } from '../../../1 Utilities/helperFunctions';
+
+import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+const textFinishingSection = mainTextApp.textHomePage.textFinishingSection;
+const mainFinishingData = mainTextApp.mainFinishingData;
 
 const FinishingSection = () => {
   const [displayMaterial, setDisplayMaterial] = useState(0);
@@ -13,7 +16,7 @@ const FinishingSection = () => {
   return (
     <section className="finishing-section">
       <div className="general-container finishing-section__container">
-        <SectionHedar titel={'Order your balcony decoration with a 60% discount!'} />
+        <SectionHedar titel={textFinishingSection.titel} />
         <FinishingBtns setDisplayMaterial={setDisplayMaterial} displayMaterial={displayMaterial} />
         <FinishingMaterial displayMaterial={displayMaterial} />
       </div>

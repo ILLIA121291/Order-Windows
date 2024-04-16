@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react';
 import './Timer.scss';
+import { useEffect, useState } from 'react';
+import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+const textTimer = mainTextApp.textDifferentComponents.textTimer;
 
 // '2024-11-28T10:27:00'
 
-const Timer = (props) => {
+const Timer = props => {
   const [time, setTime] = useState({
     days: '00',
     hours: '00',
@@ -56,23 +58,23 @@ const Timer = (props) => {
 
   return (
     <div className="timer">
-      <p className="timer_title">Until the end of the promotion:</p>
+      <p className="timer_title">{textTimer.titel}</p>
       <div className="timer_contaner">
         <div className="timer_contaner_block">
           <span className="timer_contaner_block_num timer_days">{time.days}</span>
-          Days
+          {textTimer.days}
         </div>
         <div className="timer_contaner_block">
           <span className="timer_contaner_block_num timer_hours">{time.hours}</span>
-          Hours
+          {textTimer.hours}
         </div>
         <div className="timer_contaner_block">
           <span className="timer_contaner_block_num timer_minutes">{time.minutes}</span>
-          Minutes
+          {textTimer.minutes}
         </div>
         <div className="timer_contaner_block">
           <span className="timer_contaner_block_num timer_seconds">{time.seconds}</span>
-          Seconds
+          {textTimer.seconds}
         </div>
       </div>
     </div>

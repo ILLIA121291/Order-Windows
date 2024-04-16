@@ -1,6 +1,10 @@
 import './AppFooter.scss';
 import logo from '../3.2 AppHeader/img/logo.png';
 
+import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+const textAppFooter = mainTextApp.textFooter;
+const textGeneralInformation = mainTextApp.textGeneralInformation;
+
 const AppFooter = props => {
   return (
     <footer className="app-footer">
@@ -15,8 +19,7 @@ const StillQuestions = props => {
     <div className="app-footer__still-questions">
       <div className="general-container app-footer__still-questions__container">
         <h3 className="app-footer__still-questions-titel">
-          {' '}
-          Still have questions?
+          {textAppFooter.blueBlock.titel.one}
           <button
             className="app-footer__still-questions-btn"
             onClick={() =>
@@ -30,7 +33,7 @@ const StillQuestions = props => {
               })
             }
           >
-            Ask our specialist
+            {textAppFooter.blueBlock.titel.two}
           </button>
         </h3>
       </div>
@@ -45,9 +48,8 @@ const Footer = () => {
         <div className="app-footer-footer__div"></div>
         <img className="app-footer-footer__img" src={logo} alt="" />
         <h4 className="app-footer-footer__titel">
-          {' '}
-          +7 (495) 646-61-71 <br />
-          <span className="app-footer-footer__titel-accent">info@irvasokna.ru</span>
+          {textGeneralInformation.telphone} <br />
+          <span className="app-footer-footer__titel-accent">{textGeneralInformation.email}</span>
         </h4>
       </div>
     </div>

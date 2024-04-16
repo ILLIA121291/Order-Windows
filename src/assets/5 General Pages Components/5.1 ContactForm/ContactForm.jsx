@@ -2,6 +2,9 @@ import './ContactForm.scss';
 
 import { useEffect, useState } from 'react';
 import useHttp from '../../2 Server Components/2.1 useHttp/useHttp';
+import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+
+const textContactForm = mainTextApp.textDifferentComponents.textContactForm;
 
 const ContactForm = props => {
   let initData;
@@ -12,30 +15,14 @@ const ContactForm = props => {
     initData = { action: '', customerName: '', customerPhone: '' };
   }
 
-  const callMeasure = {
-    action: 'call measure',
-    titelSmall: 'Book your free',
-    titelBig: 'estimate today',
-    btnTitel: 'CALL MEASURE!',
-    infoMassege: 'Your data is confidential',
-  };
-
-  const callMeBack = {
-    action: 'call customer',
-    titelSmall: 'Enter your details and',
-    titelBig: 'click order call',
-    btnTitel: 'Order call',
-    infoMassege: 'We will call you back within 10 minutes',
-  };
-
   let formText;
 
   switch (props.type) {
     case 'callMeasure':
-      formText = callMeasure;
+      formText = textContactForm.callMeasure;
       break;
     case 'callMeBack':
-      formText = callMeBack;
+      formText = textContactForm.callMeBack;
       break;
   }
 

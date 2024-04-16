@@ -1,6 +1,7 @@
-import { useState } from 'react';
-import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
 import './GallerySection.scss';
+import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
+import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+const textGallerySection = mainTextApp.textHomePage.textGallerySection;
 
 import imgSmall_1 from './resources/img/1.png';
 import imgSmall_2 from './resources/img/2.png';
@@ -42,7 +43,7 @@ const GallerySection = props => {
   return (
     <section className="gallery-section">
       <div className="general-container">
-        <SectionHedar titel={'Our works'} />
+        <SectionHedar titel={textGallerySection.titel} />
         <ul className="gallery-section__list" onMouseOver={e => onMouseOverImg(e)} onMouseOut={e => onMouseOutImg(e)}>
           {arrImgsSmall.map((img, index) => {
             return (

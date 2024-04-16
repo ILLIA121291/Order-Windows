@@ -5,7 +5,9 @@ import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/Sect
 import ProductSlider from './ProductSlider/ProductSlider';
 import { useState } from 'react';
 
-import mainProductsData from '../../../4 General Media-Info Recourses/mainProductsData';
+import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+const textProductSection = mainTextApp.textHomePage.textProductSection;
+const mainProductsData = mainTextApp.mainProductsData;
 
 const ProductSection = props => {
   const [displayTab, setDisplayTab] = useState(0);
@@ -13,7 +15,7 @@ const ProductSection = props => {
   return (
     <section className="product-section">
       <div className="general-container product-section__container">
-        <SectionHedar titel={'Glazing of balconies and loggias'} />
+        <SectionHedar titel={textProductSection.titel} />
         <ProductSlider setDisplayTab={setDisplayTab} displayTab={displayTab} />
         <ProductDemo displayTab={displayTab} setModalWindowState={props.setModalWindowState} />
       </div>
@@ -26,6 +28,7 @@ const ProductDemo = props => {
     <div className="product-demo">
       {mainProductsData[props.displayTab].tabs.map((tab, index) => {
         const { titel, img, description, price } = tab;
+
         const bdColor = index == 0 ? 'product-demo__product-cold' : 'product-demo__product-warm';
         const titelColor = index == 0 ? 'product-demo__titel-cold' : 'product-demo__titel-warm';
 

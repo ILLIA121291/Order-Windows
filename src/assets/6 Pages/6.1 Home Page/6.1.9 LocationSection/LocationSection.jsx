@@ -1,23 +1,30 @@
+import './LocationSection.scss';
 import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
 import GoogleMap from '../../../5 General Pages Components/5.3 GoogleMap/GoogleMap';
-import './LocationSection.scss';
+
+import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+const textLocationSection = mainTextApp.textHomePage.textLocationSection;
+const textGeneralInformation = mainTextApp.textGeneralInformation;
 
 const arrLocationInfo = [
-  { titel: 'Legal address:', description: '2393 Forest Ave, Staten Island, NY 10503, United States' },
-  { titel: 'Actual address:', description: '2391 Forest Ave, Staten Island, NY 10503, United States' },
-  { titel: 'Telephone:', description: '+1 (955) 756-81- 73' },
-  { titel: 'Email:', description: 'info@example.com' },
-  { titel: 'Working hours:', description: '09:00 - 18:00 seven days a week' },
+  { titel: textLocationSection.titelLegalAddress, description: textGeneralInformation.LegalAddress },
+  { titel: textLocationSection.titelActualAddress, description: textGeneralInformation.LegalAddress },
+  { titel: textLocationSection.titelTelephone, description: textGeneralInformation.telphone },
+  { titel: textLocationSection.titelEmail, description: textGeneralInformation.email },
+  {
+    titel: textLocationSection.titelWorkingHours,
+    description: `${textGeneralInformation.workingHours.start} - ${textGeneralInformation.workingHours.end} ${textGeneralInformation.workingDays}`,
+  },
 ];
 
 const LocationSection = () => {
   return (
     <section className="location-section">
       <div className="general-container location-section__container">
-        <SectionHedar titel={'how to find us'} />
+        <SectionHedar titel={textLocationSection.titel} />
         <div className="location-section__block">
           <div className="location-section__goole-map">
-            {/* <GoogleMap /> */}
+            <GoogleMap />
           </div>
           <ul className="location-section__list">
             {arrLocationInfo.map((info, i) => {

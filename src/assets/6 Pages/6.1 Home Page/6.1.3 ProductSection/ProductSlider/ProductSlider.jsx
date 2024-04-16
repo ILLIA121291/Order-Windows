@@ -1,7 +1,7 @@
 import './ProductSlider.scss';
 import { useState } from 'react';
 
-import mainProductsData from '../../../../4 General Media-Info Recourses/mainProductsData';
+import mainProductsData from '../../../../4 General Media-Info Recourses/01 Text/1.1 English/1.1.7 mainProductsData';
 
 const ProductSlider = props => {
   const arrImg = mainProductsData.slice(1);
