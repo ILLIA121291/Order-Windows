@@ -1,7 +1,9 @@
 import './ProductSlider.scss';
 import { useState } from 'react';
 
-import mainProductsData from '../../../../4 General Media-Info Recourses/01 Text/1.1 English/1.1.7 mainProductsData';
+import mainProductsData from '../../../../4 General Media-Info Recourses/02 mainDataApp/mainProductsData';
+import mainTextApp from '../../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
+const textProductSection = mainTextApp.textHomePage.textProductSection;
 
 const ProductSlider = props => {
   const arrImg = mainProductsData.slice(1);
@@ -32,7 +34,7 @@ const ProductSlider = props => {
       <li key={index} className="slider-window__item">
         <button className="slider-window__item-btn" onClick={() => props.setDisplayTab(index + 1)}>
           <img className="slider-window__item-img" src={product.icons} alt="" />
-          <h3 className={activeProduct}>{product.product}</h3>
+          <h3 className={activeProduct}>{textProductSection.products[index + 1].productName}</h3>
         </button>
       </li>
     );

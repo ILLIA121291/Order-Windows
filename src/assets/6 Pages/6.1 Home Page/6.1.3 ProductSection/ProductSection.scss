@@ -95,6 +95,8 @@
       width: 260px;
       height: auto;
 
+      text-transform: uppercase;
+
       font-weight: 700;
       font-size: 17px;
 
@@ -107,7 +109,7 @@
   }
 }
 
-// Animation 
+// Animation
 
 .faded {
   animation-name: faded;

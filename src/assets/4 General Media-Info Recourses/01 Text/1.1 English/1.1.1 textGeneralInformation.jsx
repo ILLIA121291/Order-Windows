@@ -2,8 +2,6 @@ import textDifferentComponents from './1.1.2 textDifferentComponents';
 import textHeader from './1.1.3 textHeader';
 import textHomePage from './1.1.5 textHomePage';
 import textFooter from './1.1.4 textFooter';
-import mainFinishingData from './1.1.6 mainFinishingData';
-import mainProductsData from './1.1.7 mainProductsData';
 
 const textGeneralInformation = {
   LegalAddress: '2393 Forest Ave, Staten Island, NY 10503, United States',
@@ -22,8 +20,6 @@ const english = {
   textHeader,
   textHomePage,
   textFooter,
-  mainFinishingData,
-  mainProductsData,
 };
 
 export default english;

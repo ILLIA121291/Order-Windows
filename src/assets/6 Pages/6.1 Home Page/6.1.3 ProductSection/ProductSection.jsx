@@ -5,9 +5,9 @@ import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/Sect
 import ProductSlider from './ProductSlider/ProductSlider';
 import { useState } from 'react';
 
+import mainProductsData from '../../../4 General Media-Info Recourses/02 mainDataApp/mainProductsData';
 import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
 const textProductSection = mainTextApp.textHomePage.textProductSection;
-const mainProductsData = mainTextApp.mainProductsData;
 
 const ProductSection = props => {
   const [displayTab, setDisplayTab] = useState(0);
@@ -27,7 +27,8 @@ const ProductDemo = props => {
   return (
     <div className="product-demo">
       {mainProductsData[props.displayTab].tabs.map((tab, index) => {
-        const { titel, img, description, price } = tab;
+        const { img, price } = tab;
+        const { titel, description } = textProductSection.products[props.displayTab].tabs[index];
 
         const bdColor = index == 0 ? 'product-demo__product-cold' : 'product-demo__product-warm';
         const titelColor = index == 0 ? 'product-demo__titel-cold' : 'product-demo__titel-warm';
@@ -47,9 +48,11 @@ const ProductDemo = props => {
             </ul>
             <div className="product-demo__calculate">
               <p className="product-demo__calculate-titel">
-                <span className="product-demo__calculate-titel-accent">${price} sq.m.</span>
+                <span className="product-demo__calculate-titel-accent">
+                  ${price} {textProductSection.sqm}
+                </span>
                 <br />
-                turnkey with installation
+                {textProductSection.turnkey}
               </p>
               <button
                 className="product-demo__calculate-btn"
@@ -59,7 +62,7 @@ const ProductDemo = props => {
                   })
                 }
               >
-                CALCULATE PRICE
+                {textProductSection.btnCalculate}
               </button>
             </div>
           </div>

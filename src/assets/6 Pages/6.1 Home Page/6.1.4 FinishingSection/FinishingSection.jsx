@@ -5,10 +5,10 @@ import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/Sect
 
 import { useState } from 'react';
 import { ifDotAddZeroToPrice } from '../../../1 Utilities/helperFunctions';
+import mainFinishingData from '../../../4 General Media-Info Recourses/02 mainDataApp/mainFinishingData';
 
 import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
 const textFinishingSection = mainTextApp.textHomePage.textFinishingSection;
-const mainFinishingData = mainTextApp.mainFinishingData;
 
 const FinishingSection = () => {
   const [displayMaterial, setDisplayMaterial] = useState(0);
@@ -27,14 +27,14 @@ const FinishingSection = () => {
 const FinishingBtns = props => {
   return (
     <ul className="finishing-btns__list">
-      {mainFinishingData.map((chapter, index) => {
+      {textFinishingSection.material.map((material, index) => {
         const btnClass =
           props.displayMaterial == index ? 'finishing-btns__btn finishing-btns__btn-active' : 'finishing-btns__btn';
 
         return (
           <li className="finishing-btns__item" key={index}>
             <button className={btnClass} onClick={() => props.setDisplayMaterial(index)}>
-              {chapter.chapter}
+              {material.chapterName}
             </button>
           </li>
         );
@@ -45,6 +45,7 @@ const FinishingBtns = props => {
 
 const FinishingMaterial = props => {
   const { decorationImg, material } = mainFinishingData[props.displayMaterial];
+  const { materialNames } = textFinishingSection.material[props.displayMaterial];
 
   return (
     <div className="finishing-material">
@@ -57,11 +58,13 @@ const FinishingMaterial = props => {
           return (
             <li className="finishing-material__item" key={i}>
               <img className="finishing-material__item-img" src={material.img} alt={material.name} />
-              <h4 className="finishing-material__item-titel">{material.name}</h4>
+              <h4 className="finishing-material__item-titel">{materialNames[i].name}</h4>
               <p className="finishing-material__item-decrption">
-                <span className="finishing-material__item-decrption-accent">$ {ifDotAddZeroToPrice(material.price)} sq. m</span>
+                <span className="finishing-material__item-decrption-accent">
+                  $ {ifDotAddZeroToPrice(material.price)} {textFinishingSection.sqm}
+                </span>
                 <br />
-                with material
+                {textFinishingSection.withMaterial}
               </p>
             </li>
           );
