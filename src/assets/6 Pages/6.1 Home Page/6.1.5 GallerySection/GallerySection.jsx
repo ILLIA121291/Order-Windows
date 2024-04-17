@@ -1,7 +1,5 @@
 import './GallerySection.scss';
 import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
-import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-const textGallerySection = mainTextApp.textHomePage.textGallerySection;
 
 import imgSmall_1 from './resources/img/1.png';
 import imgSmall_2 from './resources/img/2.png';
@@ -28,6 +26,7 @@ import imgBit_8 from './resources/img/big_img/8.png';
 const arrImgsBig = [imgBit_1, imgBit_2, imgBit_3, imgBit_4, imgBit_5, imgBit_6, imgBit_7, imgBit_8];
 
 const GallerySection = props => {
+  const textGallerySection = props.langugeApp.textHomePage.textGallerySection;
   const onMouseOverImg = e => {
     if (e.target && e.target.closest('.gallery-section__list') && e.target.classList.contains('gallery-section__img')) {
       e.target.nextElementSibling.classList.add('gallery-section__img-zoom-visible');

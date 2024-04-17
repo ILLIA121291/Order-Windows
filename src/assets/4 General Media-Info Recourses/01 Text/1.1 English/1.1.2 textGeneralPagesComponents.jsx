@@ -6,6 +6,16 @@ const textBlueCircles = [
 ];
 
 const textContactForm = {
+  placeholderName: 'Enter your name',
+  placeholderPhone: 'Enter your phone number',
+  statusLoading: 'We are sending your details, please wait.',
+  statusSuccess: 'We have successfully received your details and will contact you soon. Thank you!',
+  statusError: 'Oops something went wrong, please try again in a few minutes.',
+  enterName: 'Please enter your name.',
+  nameIncorrect: 'The name is incorrect, you can use the characters A-Z and space.',
+  enterTelephone: 'Please enter your telephone number.',
+  phoneIncorrect: 'Incorrect phone number, you can only use numbers 0-9.',
+
   callMeasure: {
     action: 'call measure',
     titelSmall: 'Book your free',
@@ -55,11 +65,17 @@ const textBalconCalculator = {
   },
 };
 
-const textDifferentComponents = {
+const textLanguagePanel = {
+  english: 'English',
+  russian: 'Russian',
+};
+
+const textGeneralPagesComponents = {
   textBlueCircles,
   textContactForm,
   textTimer,
   textBalconCalculator,
+  textLanguagePanel,
 };
 
-export default textDifferentComponents;
+export default textGeneralPagesComponents;

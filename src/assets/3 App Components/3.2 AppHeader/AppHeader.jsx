@@ -4,10 +4,11 @@ import callBtn from './img/edit.png';
 import clock from './img/clock.png';
 import phone from './img/phone.png';
 
-import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp.jsx';
-const { textHeader, textGeneralInformation } = mainTextApp;
+import LanguagePanel from '../../5 General Pages Components/5.7 LanguagePanel/LanguagePanel';
 
 const AppHeader = props => {
+  const { textHeader, textGeneralInformation } = props.langugeApp;
+
   return (
     <header className="app-header">
       <div className="general-container app-header__container">
@@ -68,7 +69,19 @@ const AppHeader = props => {
           </p>
         </div>
       </div>
+      <NavigationPanel textHeader={textHeader} setLangugeApp={props.setLangugeApp} langugeApp={props.langugeApp}/>
     </header>
+  );
+};
+
+const NavigationPanel = props => {
+  
+
+
+  return (
+    <nav className="general-container nav-panel__container">
+      <LanguagePanel setLangugeApp={props.setLangugeApp} langugeApp={props.langugeApp}/>
+    </nav>
   );
 };
 

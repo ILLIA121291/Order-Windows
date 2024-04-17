@@ -240,6 +240,7 @@ const textGuaranteeSection = {
 
 const textPaymentSection = {
   titel: 'You can pay for our services',
+  paymentTitels: ['Cash', 'By bank card', 'Cashless payments'],
 };
 
 const textPromotionSection = {

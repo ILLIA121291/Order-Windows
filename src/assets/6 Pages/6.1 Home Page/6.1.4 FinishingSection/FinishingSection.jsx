@@ -7,18 +7,24 @@ import { useState } from 'react';
 import { ifDotAddZeroToPrice } from '../../../1 Utilities/helperFunctions';
 import mainFinishingData from '../../../4 General Media-Info Recourses/02 mainDataApp/mainFinishingData';
 
-import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-const textFinishingSection = mainTextApp.textHomePage.textFinishingSection;
-
-const FinishingSection = () => {
+const FinishingSection = props => {
+  const textFinishingSection = props.langugeApp.textHomePage.textFinishingSection;
   const [displayMaterial, setDisplayMaterial] = useState(0);
 
   return (
     <section className="finishing-section">
       <div className="general-container finishing-section__container">
         <SectionHedar titel={textFinishingSection.titel} />
-        <FinishingBtns setDisplayMaterial={setDisplayMaterial} displayMaterial={displayMaterial} />
-        <FinishingMaterial displayMaterial={displayMaterial} />
+        <FinishingBtns
+          setDisplayMaterial={setDisplayMaterial}
+          displayMaterial={displayMaterial}
+          textFinishingSection={textFinishingSection}
+        />
+        <FinishingMaterial
+          displayMaterial={displayMaterial}
+          textFinishingSection={textFinishingSection}
+          langugeApp={props.langugeApp}
+        />
       </div>
     </section>
   );
@@ -27,7 +33,7 @@ const FinishingSection = () => {
 const FinishingBtns = props => {
   return (
     <ul className="finishing-btns__list">
-      {textFinishingSection.material.map((material, index) => {
+      {props.textFinishingSection.material.map((material, index) => {
         const btnClass =
           props.displayMaterial == index ? 'finishing-btns__btn finishing-btns__btn-active' : 'finishing-btns__btn';
 
@@ -45,7 +51,7 @@ const FinishingBtns = props => {
 
 const FinishingMaterial = props => {
   const { decorationImg, material } = mainFinishingData[props.displayMaterial];
-  const { materialNames } = textFinishingSection.material[props.displayMaterial];
+  const { materialNames } = props.textFinishingSection.material[props.displayMaterial];
 
   return (
     <div className="finishing-material">
@@ -61,17 +67,17 @@ const FinishingMaterial = props => {
               <h4 className="finishing-material__item-titel">{materialNames[i].name}</h4>
               <p className="finishing-material__item-decrption">
                 <span className="finishing-material__item-decrption-accent">
-                  $ {ifDotAddZeroToPrice(material.price)} {textFinishingSection.sqm}
+                  $ {ifDotAddZeroToPrice(material.price)} {props.textFinishingSection.sqm}
                 </span>
                 <br />
-                {textFinishingSection.withMaterial}
+                {props.textFinishingSection.withMaterial}
               </p>
             </li>
           );
         })}
       </ul>
 
-      <ContactForm type={'callMeasure'} />
+      <ContactForm type={'callMeasure'} langugeApp={props.langugeApp} />
     </div>
   );
 };

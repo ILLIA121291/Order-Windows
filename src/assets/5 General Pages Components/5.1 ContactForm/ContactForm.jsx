@@ -2,11 +2,9 @@ import './ContactForm.scss';
 
 import { useEffect, useState } from 'react';
 import useHttp from '../../2 Server Components/2.1 useHttp/useHttp';
-import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-
-const textContactForm = mainTextApp.textDifferentComponents.textContactForm;
 
 const ContactForm = props => {
+  const textContactForm = props.langugeApp.textGeneralPagesComponents.textContactForm;
   let initData;
 
   if (props.orderData) {
@@ -95,21 +93,21 @@ const ContactForm = props => {
     case 'loading':
       displayStatus = (
         <p className="contact-form__confidential" style={{ color: 'orange' }}>
-          We are sending your details, please wait.
+          {textContactForm.statusLoading}
         </p>
       );
       break;
     case 'success':
       displayStatus = (
         <p className="contact-form__confidential" style={{ color: 'green' }}>
-          We have successfully received your details and will contact you soon. Thank you!
+          {textContactForm.statusSuccess}
         </p>
       );
       break;
     case 'error':
       displayStatus = (
         <p className="contact-form__confidential" style={{ color: 'red' }}>
-          Oops something went wrong, please try again in a few minutes.
+          {textContactForm.statusError}
         </p>
       );
       break;
@@ -158,7 +156,7 @@ const ContactForm = props => {
           type="text"
           name="customerName"
           disabled={inputDisabled}
-          placeholder="Enter your name"
+          placeholder={textContactForm.placeholderName}
           value={customerData.customerName}
           onChange={e =>
             setCustomerData(customerData => {
@@ -172,15 +170,13 @@ const ContactForm = props => {
             opacity: validCutomerNameState ? 0 : 1,
           }}
         >
-          {customerData.customerPhone == ''
-            ? 'Please enter your name.'
-            : 'The name is incorrect, you can use the characters A-Z and space.'}
+          {customerData.customerPhone == '' ? textContactForm.enterName : textContactForm.nameIncorrect}
         </p>
         <input
           className="contact-form__input"
           type="text"
           name="customerPhone"
-          placeholder="Enter your phone number"
+          placeholder={textContactForm.placeholderPhone}
           disabled={inputDisabled}
           value={customerData.customerPhone}
           onChange={e =>
@@ -195,9 +191,7 @@ const ContactForm = props => {
             opacity: validCutomerPhoneState ? 0 : 1,
           }}
         >
-          {customerData.customerPhone == ''
-            ? 'Please enter your telephone number.'
-            : 'Incorrect phone number, you can only use numbers 0-9.'}
+          {customerData.customerPhone == '' ? textContactForm.enterTelephone : textContactForm.phoneIncorrect}
         </p>
         <button
           className="contact-form__btn"

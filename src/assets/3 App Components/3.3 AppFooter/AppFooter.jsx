@@ -1,15 +1,12 @@
 import './AppFooter.scss';
 import logo from '../3.2 AppHeader/img/logo.png';
 
-import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-const textAppFooter = mainTextApp.textFooter;
-const textGeneralInformation = mainTextApp.textGeneralInformation;
-
 const AppFooter = props => {
+  const textFooter = props.langugeApp.textFooter;
   return (
     <footer className="app-footer">
-      <StillQuestions setModalWindowState={props.setModalWindowState} />
-      <Footer />
+      <StillQuestions setModalWindowState={props.setModalWindowState} textFooter={textFooter} />
+      <Footer langugeApp={props.langugeApp} />
     </footer>
   );
 };
@@ -19,7 +16,7 @@ const StillQuestions = props => {
     <div className="app-footer__still-questions">
       <div className="general-container app-footer__still-questions__container">
         <h3 className="app-footer__still-questions-titel">
-          {textAppFooter.blueBlock.titel.one}
+          {props.textFooter.blueBlock.titel.one}
           <button
             className="app-footer__still-questions-btn"
             onClick={() =>
@@ -33,7 +30,7 @@ const StillQuestions = props => {
               })
             }
           >
-            {textAppFooter.blueBlock.titel.two}
+            {props.textFooter.blueBlock.titel.two}
           </button>
         </h3>
       </div>
@@ -41,7 +38,8 @@ const StillQuestions = props => {
   );
 };
 
-const Footer = () => {
+const Footer = props => {
+  const { textGeneralInformation } = props.langugeApp;
   return (
     <div className="app-footer-footer">
       <div className="general-container app-footer-footer__container">

@@ -1,10 +1,7 @@
 import './BlueCircles.scss';
 
-import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-
-const textBlueCircles = mainTextApp.textDifferentComponents.textBlueCircles;
-
-const BlueCircles = () => {
+const BlueCircles = props => {
+  const textBlueCircles = props.langugeApp.textGeneralPagesComponents.textBlueCircles;
   return (
     <ul className="blue-circles__list">
       <li className="blue-circles__item">

@@ -1,7 +1,5 @@
 import './BalconCalculator.scss';
 import { useState } from 'react';
-import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-const textBalconCalculator = mainTextApp.textDifferentComponents.textBalconCalculator;
 
 import balkonIcon_1 from './resources/balkon/ba_01.png';
 import balkonIcon_2 from './resources/balkon/ba_02.png';
@@ -22,6 +20,7 @@ import warmIcon from './resources/icon_warm.png';
 import ContactForm from '../5.1 ContactForm/ContactForm';
 
 const BalconCalculator = props => {
+  const textBalconCalculator = props.langugeApp.textGeneralPagesComponents.textBalconCalculator;
   const [formDisply, setFromDisplay] = useState('Balckon type');
 
   const [orderBalcon, setOrderBalcon] = useState({
@@ -37,11 +36,23 @@ const BalconCalculator = props => {
 
   switch (formDisply) {
     case 'Balckon type':
-      displyForm = <BalconTypeForm setOrderBalcon={setOrderBalcon} orderBalcon={orderBalcon} setFromDisplay={setFromDisplay} />;
+      displyForm = (
+        <BalconTypeForm
+          setOrderBalcon={setOrderBalcon}
+          orderBalcon={orderBalcon}
+          setFromDisplay={setFromDisplay}
+          textBalconCalculator={textBalconCalculator}
+        />
+      );
       break;
     case 'Balckon glazing & profile':
       displyForm = (
-        <BalconGlazingProfileForm setOrderBalcon={setOrderBalcon} orderBalcon={orderBalcon} setFromDisplay={setFromDisplay} />
+        <BalconGlazingProfileForm
+          setOrderBalcon={setOrderBalcon}
+          orderBalcon={orderBalcon}
+          setFromDisplay={setFromDisplay}
+          textBalconCalculator={textBalconCalculator}
+        />
       );
       break;
     case 'Contact form':
@@ -52,6 +63,7 @@ const BalconCalculator = props => {
           setModalWindowState={props.setModalWindowState}
           setFromDisplayBalconCalculator={setFromDisplay}
           setOrderBalcon={setOrderBalcon}
+          langugeApp={props.langugeApp}
         />
       );
       break;
@@ -68,8 +80,8 @@ const BalconTypeForm = props => {
 
   return (
     <div className="balkon-type">
-      <h2 className="balkon-type__titel">{textBalconCalculator.balkonType.titel.one}</h2>
-      <p className="balkon-type__slogon">{textBalconCalculator.balkonType.titel.two}</p>
+      <h2 className="balkon-type__titel">{props.textBalconCalculator.balkonType.titel.one}</h2>
+      <p className="balkon-type__slogon">{props.textBalconCalculator.balkonType.titel.two}</p>
       <ul className="balkon-type__icon-list">
         {arrBalkonIcons.map((icons, index) => {
           return (
@@ -95,7 +107,7 @@ const BalconTypeForm = props => {
               className="balkon-type__input"
               name="balkonWidth"
               type="number"
-              placeholder={textBalconCalculator.balkonType.placeholderWidth}
+              placeholder={props.textBalconCalculator.balkonType.placeholderWidth}
               value={props.orderBalcon.balkonWidth}
               onChange={e =>
                 props.setOrderBalcon(orderBalcon => {
@@ -103,7 +115,7 @@ const BalconTypeForm = props => {
                 })
               }
             />
-            {textBalconCalculator.balkonType.millimeters}
+            {props.textBalconCalculator.balkonType.millimeters}
           </label>
 
           <span className="balkon-type__input-label-extra">x</span>
@@ -113,19 +125,19 @@ const BalconTypeForm = props => {
               className="balkon-type__input"
               name="balkonHeight"
               type="number"
-              placeholder={textBalconCalculator.balkonType.placeholderHeight}
+              placeholder={props.textBalconCalculator.balkonType.placeholderHeight}
               onChange={e =>
                 props.setOrderBalcon(orderBalcon => {
                   return { ...orderBalcon, [e.target.name]: +e.target.value };
                 })
               }
             />
-            {textBalconCalculator.balkonType.millimeters}
+            {props.textBalconCalculator.balkonType.millimeters}
           </label>
         </div>
         <p className="balkon-type__info-text"></p>
         <button onClick={e => displayNextForm(e)} className="balkon-type__btn">
-          {textBalconCalculator.balkonType.btnNext}
+          {props.textBalconCalculator.balkonType.btnNext}
         </button>
       </form>
     </div>
@@ -140,8 +152,8 @@ const BalconGlazingProfileForm = props => {
 
   return (
     <div className="balkon-profile">
-      <h2 className="balkon-profile__titel">{textBalconCalculator.balkonProfile.titel.one}</h2>
-      <p className="balkon-profile__slogon">{textBalconCalculator.balkonProfile.titel.two}</p>
+      <h2 className="balkon-profile__titel">{props.textBalconCalculator.balkonProfile.titel.one}</h2>
+      <p className="balkon-profile__slogon">{props.textBalconCalculator.balkonProfile.titel.two}</p>
       <form className="balkon-profile__form">
         <select
           className="balkon-profile__select"
@@ -153,11 +165,11 @@ const BalconGlazingProfileForm = props => {
             })
           }
         >
-          <option value="Wooden">{textBalconCalculator.balkonProfile.options[0]}</option>
-          <option value="Aluminum">{textBalconCalculator.balkonProfile.options[1]}</option>
-          <option value="Glazing with plastic frames">{textBalconCalculator.balkonProfile.options[2]}</option>
-          <option value="Panoramic">{textBalconCalculator.balkonProfile.options[3]}</option>
-          <option value="Glazing with extension">{textBalconCalculator.balkonProfile.options[4]}</option>
+          <option value="Wooden">{props.textBalconCalculator.balkonProfile.options[0]}</option>
+          <option value="Aluminum">{props.textBalconCalculator.balkonProfile.options[1]}</option>
+          <option value="Glazing with plastic frames">{props.textBalconCalculator.balkonProfile.options[2]}</option>
+          <option value="Panoramic">{props.textBalconCalculator.balkonProfile.options[3]}</option>
+          <option value="Glazing with extension">{props.textBalconCalculator.balkonProfile.options[4]}</option>
         </select>
 
         <img className="balkon-profile__img-profile" src={coldIcon} alt="icon cold" />
@@ -174,7 +186,7 @@ const BalconGlazingProfileForm = props => {
               })
             }
           />
-          <p className="balkon-profile__radio-titel">{textBalconCalculator.balkonProfile.radioTitel.cold}</p>
+          <p className="balkon-profile__radio-titel">{props.textBalconCalculator.balkonProfile.radioTitel.cold}</p>
         </div>
 
         <img className="balkon-profile__img-profile" src={warmIcon} alt="icon warm" />
@@ -192,12 +204,12 @@ const BalconGlazingProfileForm = props => {
             }
           />
 
-          <p className="balkon-profile__radio-titel">{textBalconCalculator.balkonProfile.radioTitel.warm}</p>
+          <p className="balkon-profile__radio-titel">{props.textBalconCalculator.balkonProfile.radioTitel.warm}</p>
         </div>
 
         <p className="balkon-profile__info-text"></p>
         <button onClick={e => displayNextForm(e)} className="balkon-profile__btn">
-          {textBalconCalculator.balkonProfile.btnNext}
+          {props.textBalconCalculator.balkonProfile.btnNext}
         </button>
       </form>
     </div>

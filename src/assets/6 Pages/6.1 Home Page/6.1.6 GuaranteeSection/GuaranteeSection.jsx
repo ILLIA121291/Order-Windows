@@ -1,6 +1,4 @@
 import './GuaranteeSection.scss';
-import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-const textGuaranteeSection = mainTextApp.textHomePage.textGuaranteeSection;
 
 import Img_1 from './resources/img/1.png';
 import Img_2 from './resources/img/2.png';
@@ -11,11 +9,12 @@ import Img_6 from './resources/img/6.png';
 
 const arrImg = [Img_1, Img_2, Img_3, Img_4, Img_5, Img_6];
 
-const GuaranteeSection = () => {
+const GuaranteeSection = props => {
+  const textGuaranteeSection = props.langugeApp.textHomePage.textGuaranteeSection;
   return (
     <section className="guarantee-section">
       <div className="general-container  guarantee-section__container">
-        <GuaranteeHeader />
+        <GuaranteeHeader textGuaranteeSection={textGuaranteeSection} />
         <ul className="guarantee-section__list">
           {arrImg.map((img, i) => {
             return (
@@ -31,10 +30,10 @@ const GuaranteeSection = () => {
   );
 };
 
-const GuaranteeHeader = () => {
+const GuaranteeHeader = props => {
   return (
     <header className="guarantee-section__header">
-      <h2 className="guarantee-section__header-titel">{textGuaranteeSection.titel}</h2>
+      <h2 className="guarantee-section__header-titel">{props.textGuaranteeSection.titel}</h2>
       <div className="guarantee-section__header-decor"></div>
     </header>
   );

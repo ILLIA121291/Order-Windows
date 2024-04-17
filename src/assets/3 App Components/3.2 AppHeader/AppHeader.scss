@@ -1,6 +1,6 @@
 .app-header {
   &__container {
-    height: 100px;
+    padding-top: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -75,5 +75,16 @@
       color: rgb(0, 137, 205);
       text-decoration: underline;
     }
+  }
+}
+
+.nav-panel {
+  &__container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
   }
 }

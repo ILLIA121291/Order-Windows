@@ -5,7 +5,7 @@ import BalconCalculator from '../5.5 BalconCalculator/BalconCalculator';
 
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
-const ModalWindow = ({ modalWindowState, setModalWindowState }) => {
+const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp }) => {
   const { component, componentType, display, closeOverlay, closeEscapeBtn } = modalWindowState;
 
   display ? disablePageScroll() : enablePageScroll();
@@ -14,10 +14,10 @@ const ModalWindow = ({ modalWindowState, setModalWindowState }) => {
 
   switch (component) {
     case 'ContactForm':
-      displayComponent = <ContactForm type={componentType} setModalWindowState={setModalWindowState} />;
+      displayComponent = <ContactForm type={componentType} setModalWindowState={setModalWindowState} langugeApp={langugeApp} />;
       break;
     case 'BalconCalculator':
-      displayComponent = <BalconCalculator setModalWindowState={setModalWindowState} />;
+      displayComponent = <BalconCalculator setModalWindowState={setModalWindowState} langugeApp={langugeApp} />;
       break;
     case 'DisplayImage':
       displayComponent = <img src={componentType} alt="Display image" />;

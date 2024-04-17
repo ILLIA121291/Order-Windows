@@ -6,18 +6,21 @@ import ProductSlider from './ProductSlider/ProductSlider';
 import { useState } from 'react';
 
 import mainProductsData from '../../../4 General Media-Info Recourses/02 mainDataApp/mainProductsData';
-import mainTextApp from '../../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-const textProductSection = mainTextApp.textHomePage.textProductSection;
 
 const ProductSection = props => {
+  const textProductSection = props.langugeApp.textHomePage.textProductSection;
   const [displayTab, setDisplayTab] = useState(0);
 
   return (
     <section className="product-section">
       <div className="general-container product-section__container">
         <SectionHedar titel={textProductSection.titel} />
-        <ProductSlider setDisplayTab={setDisplayTab} displayTab={displayTab} />
-        <ProductDemo displayTab={displayTab} setModalWindowState={props.setModalWindowState} />
+        <ProductSlider setDisplayTab={setDisplayTab} displayTab={displayTab} textProductSection={textProductSection} />
+        <ProductDemo
+          displayTab={displayTab}
+          setModalWindowState={props.setModalWindowState}
+          textProductSection={textProductSection}
+        />
       </div>
     </section>
   );
@@ -28,7 +31,7 @@ const ProductDemo = props => {
     <div className="product-demo">
       {mainProductsData[props.displayTab].tabs.map((tab, index) => {
         const { img, price } = tab;
-        const { titel, description } = textProductSection.products[props.displayTab].tabs[index];
+        const { titel, description } = props.textProductSection.products[props.displayTab].tabs[index];
 
         const bdColor = index == 0 ? 'product-demo__product-cold' : 'product-demo__product-warm';
         const titelColor = index == 0 ? 'product-demo__titel-cold' : 'product-demo__titel-warm';
@@ -49,10 +52,10 @@ const ProductDemo = props => {
             <div className="product-demo__calculate">
               <p className="product-demo__calculate-titel">
                 <span className="product-demo__calculate-titel-accent">
-                  ${price} {textProductSection.sqm}
+                  ${price} {props.textProductSection.sqm}
                 </span>
                 <br />
-                {textProductSection.turnkey}
+                {props.textProductSection.turnkey}
               </p>
               <button
                 className="product-demo__calculate-btn"
@@ -62,7 +65,7 @@ const ProductDemo = props => {
                   })
                 }
               >
-                {textProductSection.btnCalculate}
+                {props.textProductSection.btnCalculate}
               </button>
             </div>
           </div>

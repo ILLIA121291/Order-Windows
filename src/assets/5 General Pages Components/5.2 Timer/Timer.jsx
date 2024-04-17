@@ -1,11 +1,10 @@
 import './Timer.scss';
 import { useEffect, useState } from 'react';
-import mainTextApp from '../../4 General Media-Info Recourses/01 Text/1.0 mainTextApp/mainTextApp';
-const textTimer = mainTextApp.textDifferentComponents.textTimer;
 
 // '2024-11-28T10:27:00'
 
 const Timer = props => {
+  const textTimer = props.langugeApp.textGeneralPagesComponents.textTimer;
   const [time, setTime] = useState({
     days: '00',
     hours: '00',
