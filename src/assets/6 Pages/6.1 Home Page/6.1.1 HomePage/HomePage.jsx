@@ -12,13 +12,17 @@ import LocationSection from '../6.1.9 LocationSection/LocationSection';
 const HomePage = props => {
   return (
     <div>
-      <FirstSection langugeApp={props.langugeApp} />
+      <FirstSection langugeApp={props.langugeApp} currencyApp={props.currencyApp} />
       <ProductSection
         setModalWindowState={props.setModalWindowState}
         langugeApp={props.langugeApp}
         currencyApp={props.currencyApp}
       />
-      <FinishingSection langugeApp={props.langugeApp} currencyApp={props.currencyApp} />
+      <FinishingSection
+        langugeApp={props.langugeApp}
+        currencyApp={props.currencyApp}
+        setModalWindowState={props.setModalWindowState}
+      />
       <GallerySection setModalWindowState={props.setModalWindowState} langugeApp={props.langugeApp} />
       <GuaranteeSection langugeApp={props.langugeApp} />
       <PaymentSection langugeApp={props.langugeApp} />

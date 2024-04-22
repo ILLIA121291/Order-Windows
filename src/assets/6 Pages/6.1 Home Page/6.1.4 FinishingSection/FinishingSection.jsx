@@ -9,22 +9,23 @@ import useDisplayPriceInCurrency from '../../../1 Utilities/useDisplayPriceInCur
 
 const FinishingSection = props => {
   const textFinishingSection = props.langugeApp.textHomePage.textFinishingSection;
-  const [displayMaterial, setDisplayMaterial] = useState(0);
+  const [displayMaterialGroup, setDisplayMaterialGroup] = useState(0);
 
   return (
     <section className="finishing-section">
       <div className="general-container finishing-section__container">
         <SectionHedar titel={textFinishingSection.titel} />
         <FinishingBtns
-          setDisplayMaterial={setDisplayMaterial}
-          displayMaterial={displayMaterial}
+          setDisplayMaterialGroup={setDisplayMaterialGroup}
+          displayMaterialGroup={displayMaterialGroup}
           textFinishingSection={textFinishingSection}
         />
         <FinishingMaterial
-          displayMaterial={displayMaterial}
+          displayMaterialGroup={displayMaterialGroup}
           textFinishingSection={textFinishingSection}
           langugeApp={props.langugeApp}
           currencyApp={props.currencyApp}
+          setModalWindowState={props.setModalWindowState}
         />
       </div>
     </section>
@@ -36,11 +37,11 @@ const FinishingBtns = props => {
     <ul className="finishing-btns__list">
       {props.textFinishingSection.material.map((material, index) => {
         const btnClass =
-          props.displayMaterial == index ? 'finishing-btns__btn finishing-btns__btn-active' : 'finishing-btns__btn';
+          props.displayMaterialGroup == index ? 'finishing-btns__btn finishing-btns__btn-active' : 'finishing-btns__btn';
 
         return (
           <li className="finishing-btns__item" key={index}>
-            <button className={btnClass} onClick={() => props.setDisplayMaterial(index)}>
+            <button className={btnClass} onClick={() => props.setDisplayMaterialGroup(index)}>
               {material.chapterName}
             </button>
           </li>
@@ -51,8 +52,8 @@ const FinishingBtns = props => {
 };
 
 const FinishingMaterial = props => {
-  const { decorationImg, material } = mainFinishingData[props.displayMaterial];
-  const { materialNames } = props.textFinishingSection.material[props.displayMaterial];
+  const { decorationImg, material } = mainFinishingData[props.displayMaterialGroup];
+  const { materialNames } = props.textFinishingSection.material[props.displayMaterialGroup];
 
   return (
     <div className="finishing-material">
@@ -63,7 +64,22 @@ const FinishingMaterial = props => {
       <ul className="finishing-material__list">
         {material.map((material, i) => {
           return (
-            <li className="finishing-material__item" key={i}>
+            <li
+              className="finishing-material__item"
+              key={i}
+              onClick={() =>
+                props.setModalWindowState({
+                  component: 'FinishingMaterialCalculator',
+                  componentType: {
+                    materialGroup: props.displayMaterialGroup,
+                    materialNumber: i,
+                  },
+                  display: true,
+                  closeOverlay: true,
+                  closeEscapeBtn: true,
+                })
+              }
+            >
               <img className="finishing-material__item-img" src={material.img} alt={material.name} />
               <h4 className="finishing-material__item-titel">{materialNames[i].name}</h4>
               <p className="finishing-material__item-decrption">

@@ -71,12 +71,24 @@ const textLanguagePanel = {
   japan: 'Japan',
 };
 
+const textFinishingMaterialCalculator = {
+  textQuantityFinishingMaterial: {
+    titel: 'Material calculator',
+    materialName: 'Material name:',
+    materialSize: 'Material size:',
+    materialDescription: 'Materal description:',
+    price: 'Price:',
+    materialCost: 'Material cost:',
+  },
+};
+
 const textGeneralPagesComponents = {
   textBlueCircles,
   textContactForm,
   textTimer,
   textBalconCalculator,
   textLanguagePanel,
+  textFinishingMaterialCalculator,
 };
 
 export default textGeneralPagesComponents;

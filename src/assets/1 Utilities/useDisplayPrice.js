@@ -1,21 +1,5 @@
-const useDisplayPriceInCurrency = (currency, price, zerro, qty) => {
-  let priceForDisplay;
-
-  if (qty) {
-    priceForDisplay *= qty
-  }
-
-  switch (currency) {
-    case 'USD':
-      priceForDisplay = price.toFixed(2);
-      break;
-    case 'EUR':
-      priceForDisplay = (price * 0.94).toFixed(2);
-      break;
-    case 'JPY':
-      priceForDisplay = (price * 154.64).toFixed(2);
-      break;
-  }
+const useDisplayPrice = (qty, price, zerro) => {
+  let priceForDisplay = (qty * +price).toFixed(2);
 
   const dot = priceForDisplay.indexOf('.');
 
@@ -39,10 +23,7 @@ const useDisplayPriceInCurrency = (currency, price, zerro, qty) => {
 
     priceForDisplay = resultArr.join('');
   }
-
-
-
-  return priceForDisplay;
+  return  priceForDisplay
 };
 
-export default useDisplayPriceInCurrency;
+export default useDisplayPrice;

@@ -73,6 +73,7 @@ function App() {
         modalWindowState={modalWindowState}
         setModalWindowState={setModalWindowState}
         langugeApp={langugeApp}
+        currencyApp={currencyApp} 
       />
     </div>
   );

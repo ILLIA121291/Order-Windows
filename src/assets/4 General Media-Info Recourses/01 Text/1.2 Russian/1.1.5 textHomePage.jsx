@@ -1,7 +1,7 @@
 const textFirstSection = {
   titel: {
     one: 'Остекление балконов «под ключ»',
-    two: 'от $1,500!',
+    two: 'от',
   },
 };
 

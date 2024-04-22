@@ -1,7 +1,7 @@
 const textFirstSection = {
   titel: {
     one: 'Glazing of balconies on a "turn-key"',
-    two: 'basis for $1,500!',
+    two: 'start',
   },
 };
 
@@ -144,18 +144,28 @@ const textFinishingSection = {
       materialNames: [
         {
           name: 'Lining',
+          description:
+            'Lining Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Plastic lining',
+          description:
+            'Plastic lining orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'PVC panels',
+          description:
+            'PVC panels orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Laminate flooring',
+          description:
+            'Laminate flooring orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Wood flooring',
+          description:
+            'Wood flooring orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
       ],
     },
@@ -165,18 +175,28 @@ const textFinishingSection = {
       materialNames: [
         {
           name: 'Metal siding',
+          description:
+            'Metal siding orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Plastic lining',
+          description:
+            'Plastic lining orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Corrugated sheet',
+          description:
+            'Corrugated sheet orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Wooden lining',
+          description:
+            'Wooden lining orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Vinyl siding',
+          description:
+            'Vinyl siding orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
       ],
     },
@@ -186,15 +206,23 @@ const textFinishingSection = {
       materialNames: [
         {
           name: 'Aluminum profile',
+          description:
+            'Aluminum profile orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Frameless glazing',
+          description:
+            'Frameless glazing orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'PVC profile',
+          description:
+            'PVC profile orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Wood profile',
+          description:
+            'Wood profile orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
       ],
     },
@@ -204,18 +232,28 @@ const textFinishingSection = {
       materialNames: [
         {
           name: 'Corrugated sheet',
+          description:
+            'Corrugated sheet ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Metal tiles',
+          description:
+            'Metal tiles orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Ondulin',
+          description:
+            'Ondulin orem ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Polycarbonate',
+          description:
+            'Polycarbonate ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
         {
           name: 'Double-glazed window',
+          description:
+            'Double-glazed window ipsum, dolor sit amet consectetur adipisicing elit. Sit magnam suscipit fugiat, aut exercitationem officia incidunt ea autem magni debitis recusandae voluptatem libero, eos numquam fugit quisquam neque perspiciatis corrupti.',
         },
       ],
     },

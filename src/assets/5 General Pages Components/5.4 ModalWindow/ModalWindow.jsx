@@ -4,8 +4,9 @@ import ContactForm from '../5.1 ContactForm/ContactForm';
 import BalconCalculator from '../5.5 BalconCalculator/BalconCalculator';
 
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import FinishingMaterialCalculator from '../5.9 FinishingMaterialCalculator/FinishingMaterialCalculator';
 
-const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp }) => {
+const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp, currencyApp }) => {
   const { component, componentType, display, closeOverlay, closeEscapeBtn } = modalWindowState;
 
   display ? disablePageScroll() : enablePageScroll();
@@ -18,6 +19,11 @@ const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp }) => {
       break;
     case 'BalconCalculator':
       displayComponent = <BalconCalculator setModalWindowState={setModalWindowState} langugeApp={langugeApp} />;
+      break;
+    case 'FinishingMaterialCalculator':
+      displayComponent = (
+        <FinishingMaterialCalculator langugeApp={langugeApp} componentType={componentType} currencyApp={currencyApp} />
+      );
       break;
     case 'DisplayImage':
       displayComponent = <img src={componentType} alt="Display image" />;

@@ -1,7 +1,7 @@
 const textFirstSection = {
   titel: {
     one: '「ターンキー」でのバルコニーのガラス張り',
-    two: '基本は1,500ドルです！',
+    two: '始める',
   },
 };
 
