@@ -4,8 +4,8 @@ import ContactForm from '../../../5 General Pages Components/5.1 ContactForm/Con
 import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
 
 import { useState } from 'react';
-import { ifDotAddZeroToPrice } from '../../../1 Utilities/helperFunctions';
 import mainFinishingData from '../../../4 General Media-Info Recourses/02 mainDataApp/mainFinishingData';
+import useDisplayPriceInCurrency from '../../../1 Utilities/useDisplayPriceInCurrency';
 
 const FinishingSection = props => {
   const textFinishingSection = props.langugeApp.textHomePage.textFinishingSection;
@@ -24,6 +24,7 @@ const FinishingSection = props => {
           displayMaterial={displayMaterial}
           textFinishingSection={textFinishingSection}
           langugeApp={props.langugeApp}
+          currencyApp={props.currencyApp}
         />
       </div>
     </section>
@@ -67,7 +68,8 @@ const FinishingMaterial = props => {
               <h4 className="finishing-material__item-titel">{materialNames[i].name}</h4>
               <p className="finishing-material__item-decrption">
                 <span className="finishing-material__item-decrption-accent">
-                  $ {ifDotAddZeroToPrice(material.price)} {props.textFinishingSection.sqm}
+                  {useDisplayPriceInCurrency(props.currencyApp, material.price)} {props.currencyApp}{' '}
+                  {props.textFinishingSection.sqm}
                 </span>
                 <br />
                 {props.textFinishingSection.withMaterial}

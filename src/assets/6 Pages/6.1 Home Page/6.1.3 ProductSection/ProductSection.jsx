@@ -6,6 +6,7 @@ import ProductSlider from './ProductSlider/ProductSlider';
 import { useState } from 'react';
 
 import mainProductsData from '../../../4 General Media-Info Recourses/02 mainDataApp/mainProductsData';
+import useDisplayPriceInCurrency from '../../../1 Utilities/useDisplayPriceInCurrency';
 
 const ProductSection = props => {
   const textProductSection = props.langugeApp.textHomePage.textProductSection;
@@ -20,6 +21,7 @@ const ProductSection = props => {
           displayTab={displayTab}
           setModalWindowState={props.setModalWindowState}
           textProductSection={textProductSection}
+          currencyApp={props.currencyApp}
         />
       </div>
     </section>
@@ -52,7 +54,7 @@ const ProductDemo = props => {
             <div className="product-demo__calculate">
               <p className="product-demo__calculate-titel">
                 <span className="product-demo__calculate-titel-accent">
-                  ${price} {props.textProductSection.sqm}
+                  {useDisplayPriceInCurrency(props.currencyApp, price)} {props.currencyApp} {props.textProductSection.sqm}
                 </span>
                 <br />
                 {props.textProductSection.turnkey}

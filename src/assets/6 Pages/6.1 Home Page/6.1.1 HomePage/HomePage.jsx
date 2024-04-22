@@ -13,8 +13,12 @@ const HomePage = props => {
   return (
     <div>
       <FirstSection langugeApp={props.langugeApp} />
-      <ProductSection setModalWindowState={props.setModalWindowState} langugeApp={props.langugeApp} />
-      <FinishingSection langugeApp={props.langugeApp} />
+      <ProductSection
+        setModalWindowState={props.setModalWindowState}
+        langugeApp={props.langugeApp}
+        currencyApp={props.currencyApp}
+      />
+      <FinishingSection langugeApp={props.langugeApp} currencyApp={props.currencyApp} />
       <GallerySection setModalWindowState={props.setModalWindowState} langugeApp={props.langugeApp} />
       <GuaranteeSection langugeApp={props.langugeApp} />
       <PaymentSection langugeApp={props.langugeApp} />

@@ -5,6 +5,7 @@ import clock from './img/clock.png';
 import phone from './img/phone.png';
 
 import LanguagePanel from '../../5 General Pages Components/5.7 LanguagePanel/LanguagePanel';
+import CurrencyPanel from '../../5 General Pages Components/5.8 CurrencyPanel/CurrencyPanel';
 
 const AppHeader = props => {
   const { textHeader, textGeneralInformation } = props.langugeApp;
@@ -69,18 +70,22 @@ const AppHeader = props => {
           </p>
         </div>
       </div>
-      <NavigationPanel textHeader={textHeader} setLangugeApp={props.setLangugeApp} langugeApp={props.langugeApp}/>
+      <NavigationPanel
+        textHeader={textHeader}
+        langugeApp={props.langugeApp}
+        setLangugeApp={props.setLangugeApp}
+        currencyApp={props.currencyApp}
+        setCurrencyApp={props.setCurrencyApp}
+      />
     </header>
   );
 };
 
 const NavigationPanel = props => {
-  
-
-
   return (
     <nav className="general-container nav-panel__container">
-      <LanguagePanel setLangugeApp={props.setLangugeApp} langugeApp={props.langugeApp}/>
+      <CurrencyPanel currencyApp={props.currencyApp} setCurrencyApp={props.setCurrencyApp} />
+      <LanguagePanel setLangugeApp={props.setLangugeApp} langugeApp={props.langugeApp} />
     </nav>
   );
 };

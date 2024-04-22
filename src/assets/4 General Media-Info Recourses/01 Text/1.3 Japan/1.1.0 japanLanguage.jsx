@@ -4,7 +4,7 @@ import textHeader from './1.1.3 textHeader';
 import textFooter from './1.1.4 textFooter';
 import textHomePage from './1.1.5 textHomePage';
 
-const englishLanguage = {
+const japanLanguage = {
   textGeneralInformation,
   textGeneralPagesComponents,
   textHeader,
@@ -12,4 +12,4 @@ const englishLanguage = {
   textHomePage,
 };
 
-export default englishLanguage;
+export default japanLanguage;

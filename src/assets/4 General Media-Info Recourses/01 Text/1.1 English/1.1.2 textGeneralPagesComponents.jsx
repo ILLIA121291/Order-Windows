@@ -68,6 +68,7 @@ const textBalconCalculator = {
 const textLanguagePanel = {
   english: 'English',
   russian: 'Russian',
+  japan: 'Japan',
 };
 
 const textGeneralPagesComponents = {

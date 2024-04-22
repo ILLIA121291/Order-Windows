@@ -9,6 +9,7 @@ import ModalWindowContactForm from '../../5 General Pages Components/5.4 ModalWi
 
 import englishLanguage from '../../4 General Media-Info Recourses/01 Text/1.1 English/1.1.0 englishLanguage';
 import russianLanguage from '../../4 General Media-Info Recourses/01 Text/1.2 Russian/1.1.0 russianLanguage';
+import japanLanguage from '../../4 General Media-Info Recourses/01 Text/1.3 Japan/1.1.0 japanLanguage';
 
 let initialLanguge;
 if (!localStorage.getItem('language')) {
@@ -21,6 +22,26 @@ if (!localStorage.getItem('language')) {
       break;
     case 'Russian':
       initialLanguge = russianLanguage;
+      break;
+    case 'Japan':
+      initialLanguge = japanLanguage;
+      break;
+  }
+}
+
+let initialCurrency;
+if (!localStorage.getItem('currency')) {
+  localStorage.setItem('currency', 'USD');
+} else {
+  switch (localStorage.getItem('currency')) {
+    case 'USD':
+      initialCurrency = 'USD';
+      break;
+    case 'EUR':
+      initialCurrency = 'EUR';
+      break;
+    case 'JPY':
+      initialCurrency = 'JPY';
       break;
   }
 }
@@ -35,11 +56,18 @@ function App() {
   });
 
   const [langugeApp, setLangugeApp] = useState(initialLanguge);
+  const [currencyApp, setCurrencyApp] = useState(initialCurrency);
 
   return (
     <div className="a">
-      <AppHeader setModalWindowState={setModalWindowState} langugeApp={langugeApp} setLangugeApp={setLangugeApp} />
-      <HomePage setModalWindowState={setModalWindowState} langugeApp={langugeApp} />
+      <AppHeader
+        setModalWindowState={setModalWindowState}
+        langugeApp={langugeApp}
+        setLangugeApp={setLangugeApp}
+        currencyApp={currencyApp}
+        setCurrencyApp={setCurrencyApp}
+      />
+      <HomePage setModalWindowState={setModalWindowState} langugeApp={langugeApp} currencyApp={currencyApp} />
       <AppFooter setModalWindowState={setModalWindowState} langugeApp={langugeApp} />
       <ModalWindowContactForm
         modalWindowState={modalWindowState}
