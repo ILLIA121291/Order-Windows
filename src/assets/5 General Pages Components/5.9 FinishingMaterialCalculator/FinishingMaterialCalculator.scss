@@ -6,17 +6,19 @@
     padding: 20px;
     display: flex;
     justify-content: center;
+    align-items: center;
   }
 }
 
 .quantity-material {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   &__titel {
     font-size: 30px;
     font-weight: 700;
-    margin: 20px 0px 30px;
+    margin: 20px 0px 10px;
     text-align: center;
   }
 
@@ -29,23 +31,22 @@
   &__general {
     margin-top: 10px;
     line-height: 120%;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
+    color: rgb(123, 148, 169);
 
     &-accent {
       font-size: 18px;
-      font-weight: 700;
+      font-weight: 400;
+      color: #000;
     }
   }
 
-  &__general:nth-child(6){
+  &__general:nth-child(6) {
     text-align: center;
   }
 
-
-
   &__qty-panel {
-    margin-top: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,7 +59,7 @@
     }
 
     &-input {
-      width: 60px;
+      width: 100px;
       padding: 6px 12px;
       border-radius: 5px;
       border: 1px solid rgb(204, 204, 204);
@@ -77,5 +78,77 @@
     &-input::-webkit-inner-spin-button {
       -webkit-appearance: none;
     }
+  }
+
+  &__material-cost {
+    visibility: visible;
+    text-align: center;
+    margin: 0px;
+
+    &-accent {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+  }
+}
+
+.delivery-payment-material {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__titel {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 20px 0px 10px;
+    text-align: center;
+
+    &-small {
+      line-height: 120%;
+      font-weight: 700;
+      font-size: 16px;
+      text-align: center;
+      color: rgb(123, 148, 169);
+    }
+  }
+
+  &__list {
+    width: 300px;
+  }
+
+  &__item {
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+
+    line-height: 120%;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__radio {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  &__delivery-address {
+    width: 300px;
+    height: 70px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(102, 175, 233);
+    box-shadow: 0px 0px 5px rgb(102, 175, 233);
+    background: #fff;
+    resize: none;
+  }
+
+  &__delivery-address:disabled {
+    border: 1px solid rgb(236, 238, 240);
+    box-shadow: 0px 0px 5px rgb(228, 229, 231);
   }
 }

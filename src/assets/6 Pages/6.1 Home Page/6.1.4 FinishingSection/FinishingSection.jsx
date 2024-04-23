@@ -75,7 +75,7 @@ const FinishingMaterial = props => {
                     materialNumber: i,
                   },
                   display: true,
-                  closeOverlay: true,
+                  closeOverlay: false,
                   closeEscapeBtn: true,
                 })
               }

@@ -1,5 +1,7 @@
-const useDisplayPrice = (qty, price, zerro) => {
-  let priceForDisplay = (qty * +price).toFixed(2);
+const useDisplayMaterialCost = (price, qty) => {
+  if (qty == 0 || price == 0) return 0;
+
+  let priceForDisplay = (+price.replaceAll(' ', '') * qty).toFixed(2).toString();
 
   const dot = priceForDisplay.indexOf('.');
 
@@ -17,13 +19,11 @@ const useDisplayPrice = (qty, price, zerro) => {
     }
 
     resultArr.reverse();
-    if (!zerro) {
-      resultArr.push(...afterDot);
-    }
+    resultArr.push(...afterDot);
 
     priceForDisplay = resultArr.join('');
   }
-  return  priceForDisplay
+  return priceForDisplay;
 };
 
-export default useDisplayPrice;
+export default useDisplayMaterialCost;

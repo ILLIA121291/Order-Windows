@@ -1,17 +1,22 @@
-const useDisplayPriceInCurrency = (currency, price, zerro) => {
-  let priceForDisplay;
+const useMathOperationsWithPrice = (action, one, two) => {
+  if (!action || !one || !two) return 'useMathOper...';
 
-  switch (currency) {
-    case 'USD':
-      priceForDisplay = price.toFixed(2);
-      break;
-    case 'EUR':
-      priceForDisplay = (price * 0.94).toFixed(2);
-      break;
-    case 'JPY':
-      priceForDisplay = (price * 154.64).toFixed(2);
+  let result;
+
+  switch (action) {
+    case '+':
+      result = addition(one, two);
       break;
   }
+
+  return result;
+};
+
+const addition = (one, two) => {
+  const priceOne = +one.replaceAll(' ', '');
+  const priceTwo = +two.replaceAll(' ', '');
+
+  let priceForDisplay = (priceOne + priceTwo).toFixed(2).toString();
 
   const dot = priceForDisplay.indexOf('.');
 
@@ -29,14 +34,11 @@ const useDisplayPriceInCurrency = (currency, price, zerro) => {
     }
 
     resultArr.reverse();
-    if (!zerro) {
-      resultArr.push(...afterDot);
-    }
+    resultArr.push(...afterDot);
 
     priceForDisplay = resultArr.join('');
   }
-
   return priceForDisplay;
 };
 
-export default useDisplayPriceInCurrency;
+export default useMathOperationsWithPrice;

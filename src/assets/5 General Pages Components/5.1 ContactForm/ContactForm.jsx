@@ -8,7 +8,7 @@ const ContactForm = props => {
   let initData;
 
   if (props.orderData) {
-    initData = { ...props.orderData, action: 'Customer order', customerName: '', customerPhone: '' };
+    initData = { ...props.orderData, customerName: '', customerPhone: '' };
   } else {
     initData = { action: '', customerName: '', customerPhone: '' };
   }
@@ -21,6 +21,9 @@ const ContactForm = props => {
       break;
     case 'callMeBack':
       formText = textContactForm.callMeBack;
+      break;
+    case 'orderFinishingMaterial':
+      formText = textContactForm.orderFinishingMaterial;
       break;
   }
 
@@ -72,6 +75,10 @@ const ContactForm = props => {
             glazingType: 'Wooden glazing',
             profileType: '',
           });
+        }
+
+        if (props.setFromDisplayFinishingMaterialCalculator) {
+          props.setFromDisplayFinishingMaterialCalculator('Quantity Finishing Material');
         }
       }, 5000);
     } else {

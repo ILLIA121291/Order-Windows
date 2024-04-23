@@ -22,7 +22,7 @@ const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp, curren
       break;
     case 'FinishingMaterialCalculator':
       displayComponent = (
-        <FinishingMaterialCalculator langugeApp={langugeApp} componentType={componentType} currencyApp={currencyApp} />
+        <FinishingMaterialCalculator langugeApp={langugeApp} componentType={componentType} currencyApp={currencyApp} setModalWindowState={setModalWindowState}/>
       );
       break;
     case 'DisplayImage':

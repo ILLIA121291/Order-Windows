@@ -30,6 +30,14 @@ const textContactForm = {
     btnTitel: 'Order call',
     infoMassege: 'We will call you back within 10 minutes',
   },
+
+  orderFinishingMaterial: {
+    action: 'Customer order finishing material',
+    titelSmall: 'Order confirmation',
+    titelBig: 'Enter your detail',
+    btnTitel: 'Order confirmation',
+    infoMassege: 'We will call you back within 10 minutes',
+  },
 };
 
 const textTimer = {
@@ -72,13 +80,36 @@ const textLanguagePanel = {
 };
 
 const textFinishingMaterialCalculator = {
+  btnNext: 'Next',
+
   textQuantityFinishingMaterial: {
     titel: 'Material calculator',
-    materialName: 'Material name:',
-    materialSize: 'Material size:',
-    materialDescription: 'Materal description:',
-    price: 'Price:',
-    materialCost: 'Material cost:',
+    materialName: 'Material name',
+    materialSize: 'Material size',
+    materialDescription: 'Materal description',
+    price: 'Price',
+    materialCost: 'Material cost',
+    infoMassege: 'Please indicate the quantity of material',
+  },
+
+  textDeliveryPaymentFinishingMaterial: {
+    titel: 'Delivery & payment',
+    payment: 'Payment',
+    cash: 'Cash',
+    bankCard: 'Bank card',
+    cashlessPayments: 'Cashless payments',
+    delivery: 'Delivery',
+    noDelivery: 'No delivery',
+    cityDelivery: 'City delivery free',
+    cityOutsideDelivery: 'City outside delivery',
+    deliveryAddress: 'Delivery address',
+    orderCost: 'Order cost',
+    materialCost: 'Material cost',
+    deliveryCost: 'Delivery cost',
+    total: 'Total',
+    infoMessPaymentType: 'Please select payment type',
+    infoMessDeliveryType: 'Please select delivery type',
+    infoMessDeliveryAddress: 'Please enter delivery address',
   },
 };
 
