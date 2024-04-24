@@ -58,7 +58,7 @@ const BalconCalculator = props => {
     case 'Contact form':
       displyForm = (
         <ContactForm
-          type={'callMeasure'}
+          type={'orderOrderBalcon'}
           orderData={orderBalcon}
           setModalWindowState={props.setModalWindowState}
           setFromDisplayBalconCalculator={setFromDisplay}

@@ -5,6 +5,7 @@ import textFooter from './1.1.4 textFooter';
 import textHomePage from './1.1.5 textHomePage';
 
 const russianLanguage = {
+  language: 'Russian',
   textGeneralInformation,
   textGeneralPagesComponents,
   textHeader,

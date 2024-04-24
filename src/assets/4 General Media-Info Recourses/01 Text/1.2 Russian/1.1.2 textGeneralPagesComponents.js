@@ -17,14 +17,12 @@ const textContactForm = {
   phoneIncorrect: 'Неверный номер телефона, можно использовать только цифры 0–9.',
 
   callMeasure: {
-    action: 'вызвать замерщика',
     titelSmall: 'Закажите бесплатную',
     titelBig: 'оценку сегодня',
     btnTitel: 'вызвать замерщика!',
     infoMassege: 'Ваши данные конфиденциальны',
   },
   callMeBack: {
-    action: 'позвонить клиенту',
     titelSmall: 'Введите свои данные и',
     titelBig: 'нажмите заказать звонок',
     btnTitel: 'Заказать звонок',
@@ -32,7 +30,6 @@ const textContactForm = {
   },
 
   orderFinishingMaterial: {
-    action: 'Заказ от клиента на отделочные материалы',
     titelSmall: 'Подтверждение заказа',
     titelBig: 'Укажите ваши данные',
     btnTitel: 'Заказать',

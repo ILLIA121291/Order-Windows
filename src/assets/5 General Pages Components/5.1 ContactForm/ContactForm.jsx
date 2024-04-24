@@ -2,30 +2,14 @@ import './ContactForm.scss';
 
 import { useEffect, useState } from 'react';
 import useHttp from '../../2 Server Components/2.1 useHttp/useHttp';
+import useInitData from './useInitData';
+import DisplayHttpStatusInInformMessage from './DisplayHttpStatusInInformMessage';
+import { validationCustomerName, validationCustomerPhone } from '../../1 Utilities/usedValidationFunctions';
 
 const ContactForm = props => {
   const textContactForm = props.langugeApp.textGeneralPagesComponents.textContactForm;
-  let initData;
 
-  if (props.orderData) {
-    initData = { ...props.orderData, customerName: '', customerPhone: '' };
-  } else {
-    initData = { action: '', customerName: '', customerPhone: '' };
-  }
-
-  let formText;
-
-  switch (props.type) {
-    case 'callMeasure':
-      formText = textContactForm.callMeasure;
-      break;
-    case 'callMeBack':
-      formText = textContactForm.callMeBack;
-      break;
-    case 'orderFinishingMaterial':
-      formText = textContactForm.orderFinishingMaterial;
-      break;
-  }
+  const { formText, action, initData } = useInitData(props.langugeApp, props.type, props.orderData);
 
   const [customerData, setCustomerData] = useState(initData);
   const [sendFromBtnState, setSendFormBtnState] = useState(false);
@@ -43,9 +27,9 @@ const ContactForm = props => {
 
   useEffect(() => {
     setCustomerData(customerData => {
-      return { ...customerData, action: formText.action };
+      return { ...customerData, action, customerLanguage: props.langugeApp.language };
     });
-  }, [props.type]);
+  }, [props.type, props.langugeApp]);
 
   const sendDataToServer = e => {
     e.preventDefault();
@@ -56,9 +40,11 @@ const ContactForm = props => {
       postCustomerData(customerData);
 
       setTimeout(() => {
-        setProcess('wating'), setCustomerData({ action: formText.action, customerName: '', customerPhone: '' });
+        setProcess('wating');
+        setCustomerData({ action: action, customerName: '', customerPhone: '', customerLanguage: props.langugeApp.language });
         setSendFormBtnState(false);
         setInputDisabled(false);
+
         if (props.setModalWindowState) {
           props.setModalWindowState(modalWindowState => {
             return { ...modalWindowState, display: false };
@@ -68,7 +54,6 @@ const ContactForm = props => {
         if (props.setFromDisplayBalconCalculator) {
           props.setFromDisplayBalconCalculator('Balckon type');
           props.setOrderBalcon({
-            action: 'Customer order balcon',
             balkonType: 0,
             balkonWidth: '',
             balkonHeight: '',
@@ -93,42 +78,6 @@ const ContactForm = props => {
       }
     }
   };
-
-  let displayStatus;
-
-  switch (process) {
-    case 'loading':
-      displayStatus = (
-        <p className="contact-form__confidential" style={{ color: 'orange' }}>
-          {textContactForm.statusLoading}
-        </p>
-      );
-      break;
-    case 'success':
-      displayStatus = (
-        <p className="contact-form__confidential" style={{ color: 'green' }}>
-          {textContactForm.statusSuccess}
-        </p>
-      );
-      break;
-    case 'error':
-      displayStatus = (
-        <p className="contact-form__confidential" style={{ color: 'red' }}>
-          {textContactForm.statusError}
-        </p>
-      );
-      break;
-    default:
-      displayStatus = <p className="contact-form__confidential">{formText.infoMassege}</p>;
-  }
-
-  function validationCustomerName(string) {
-    return string.match(/^[A-Za-z-\s]+$/) ? true : false;
-  }
-
-  function validationCustomerPhone(string) {
-    return string.match(/^[0-9]+$/) ? true : false;
-  }
 
   const [validCutomerNameState, setValidCutomerNameState] = useState(true);
   const [validCutomerPhoneState, setValidCutomerPhoneState] = useState(true);
@@ -210,7 +159,7 @@ const ContactForm = props => {
         >
           {formText.btnTitel}
         </button>
-        {displayStatus}
+        <DisplayHttpStatusInInformMessage process={process} textContactForm={textContactForm} formText={formText} />
       </form>
     </div>
   );

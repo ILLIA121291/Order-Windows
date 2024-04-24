@@ -5,6 +5,7 @@ import textFooter from './1.1.4 textFooter';
 import textHomePage from './1.1.5 textHomePage';
 
 const japanLanguage = {
+  language: 'Japanese',
   textGeneralInformation,
   textGeneralPagesComponents,
   textHeader,

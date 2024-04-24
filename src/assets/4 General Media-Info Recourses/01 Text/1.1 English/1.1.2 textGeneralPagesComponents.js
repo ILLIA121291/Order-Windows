@@ -17,14 +17,12 @@ const textContactForm = {
   phoneIncorrect: 'Incorrect phone number, you can only use numbers 0-9.',
 
   callMeasure: {
-    action: 'call measure',
     titelSmall: 'Book your free',
     titelBig: 'estimate today',
     btnTitel: 'CALL MEASURE!',
     infoMassege: 'Your data is confidential',
   },
   callMeBack: {
-    action: 'call customer',
     titelSmall: 'Enter your details and',
     titelBig: 'click order call',
     btnTitel: 'Order call',
@@ -32,7 +30,6 @@ const textContactForm = {
   },
 
   orderFinishingMaterial: {
-    action: 'Customer order finishing material',
     titelSmall: 'Order confirmation',
     titelBig: 'Enter your detail',
     btnTitel: 'Order',

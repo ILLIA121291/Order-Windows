@@ -5,6 +5,7 @@ import textFooter from './1.1.4 textFooter';
 import textHomePage from './1.1.5 textHomePage';
 
 const englishLanguage = {
+  language: 'English',
   textGeneralInformation,
   textGeneralPagesComponents,
   textHeader,

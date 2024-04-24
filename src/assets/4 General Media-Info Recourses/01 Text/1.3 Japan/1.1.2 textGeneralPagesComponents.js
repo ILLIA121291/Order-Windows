@@ -17,14 +17,12 @@ const textContactForm = {
   phoneIncorrect: '電話番号が間違っています。使用できるのは 0 ～ 9 の番号のみです。',
 
   callMeasure: {
-    action: 'コールメジャー',
     titelSmall: '無料で予約してください',
     titelBig: '今日の見積もり',
     btnTitel: 'コールメジャー!',
     infoMassege: 'あなたのデータは機密です',
   },
   callMeBack: {
-    action: '顧客に電話する',
     titelSmall: '詳細を入力し、',
     titelBig: 'クリック注文コール',
     btnTitel: 'オーダーコール',
@@ -32,7 +30,6 @@ const textContactForm = {
   },
 
   orderFinishingMaterial: {
-    action: 'お客様オーダーの仕上げ材',
     titelSmall: '注文の確認',
     titelBig: '詳細を入力してください',
     btnTitel: '注文',
