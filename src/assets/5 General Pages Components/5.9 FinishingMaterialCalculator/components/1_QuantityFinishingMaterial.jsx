@@ -1,3 +1,7 @@
+import { useEffect, useState } from 'react';
+import useDisplayPriceInCurrency from "../../../1 Utilities/useDisplayPriceInCurrency";
+import useDisplayMaterialCost from '../../../1 Utilities/useDisplayMaterialCost';
+
 const QuantityFinishingMaterial = props => {
   const {
     textFinishingMaterialCalculator,
