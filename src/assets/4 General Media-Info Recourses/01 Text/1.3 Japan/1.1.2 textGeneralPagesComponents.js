@@ -55,6 +55,7 @@ const textBalconCalculator = {
     placeholderHeight: '身長',
     millimeters: 'んん',
     btnNext: '次',
+    infoMessSizeBalkon: 'バルコニーのサイズをお知らせください。.',
   },
   balkonProfile: {
     titel: {
@@ -73,6 +74,8 @@ const textBalconCalculator = {
       warm: '暖かい',
     },
     btnNext: '次',
+    infoMessGlazingType: 'ガラスの種類を選択してください',
+    infoMessProfilType: 'プロファイルの種類を選択してください',
   },
 };
 

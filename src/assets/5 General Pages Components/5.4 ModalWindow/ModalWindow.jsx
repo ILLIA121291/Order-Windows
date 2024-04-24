@@ -15,14 +15,28 @@ const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp, curren
 
   switch (component) {
     case 'ContactForm':
-      displayComponent = <ContactForm type={componentType} setModalWindowState={setModalWindowState} langugeApp={langugeApp} />;
+      displayComponent = (
+        <ContactForm
+          type={componentType}
+          setModalWindowState={setModalWindowState}
+          langugeApp={langugeApp}
+          currencyApp={currencyApp}
+        />
+      );
       break;
     case 'BalconCalculator':
-      displayComponent = <BalconCalculator setModalWindowState={setModalWindowState} langugeApp={langugeApp} />;
+      displayComponent = (
+        <BalconCalculator setModalWindowState={setModalWindowState} currencyApp={currencyApp} langugeApp={langugeApp} />
+      );
       break;
     case 'FinishingMaterialCalculator':
       displayComponent = (
-        <FinishingMaterialCalculator langugeApp={langugeApp} componentType={componentType} currencyApp={currencyApp} setModalWindowState={setModalWindowState}/>
+        <FinishingMaterialCalculator
+          langugeApp={langugeApp}
+          componentType={componentType}
+          currencyApp={currencyApp}
+          setModalWindowState={setModalWindowState}
+        />
       );
       break;
     case 'DisplayImage':

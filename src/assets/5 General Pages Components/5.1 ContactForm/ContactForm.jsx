@@ -7,9 +7,19 @@ import DisplayHttpStatusInInformMessage from './DisplayHttpStatusInInformMessage
 import { validationCustomerName, validationCustomerPhone } from '../../1 Utilities/usedValidationFunctions';
 
 const ContactForm = props => {
-  const textContactForm = props.langugeApp.textGeneralPagesComponents.textContactForm;
+  const {
+    type,
+    langugeApp,
+    currencyApp,
+    orderData,
+    setModalWindowState,
+    setFromDisplayBalconCalculator,
+    setOrderBalcon,
+    setFromDisplayFinishingMaterialCalculator,
+  } = props;
+  const textContactForm = langugeApp.textGeneralPagesComponents.textContactForm;
 
-  const { formText, action, initData } = useInitData(props.langugeApp, props.type, props.orderData);
+  const { formText, customerAction, initData } = useInitData(langugeApp, type, orderData, currencyApp);
 
   const [customerData, setCustomerData] = useState(initData);
   const [sendFromBtnState, setSendFormBtnState] = useState(false);
@@ -27,9 +37,9 @@ const ContactForm = props => {
 
   useEffect(() => {
     setCustomerData(customerData => {
-      return { ...customerData, action, customerLanguage: props.langugeApp.language };
+      return { ...customerData, customerAction, customerLanguage: langugeApp.language, customerCurrency: currencyApp };
     });
-  }, [props.type, props.langugeApp]);
+  }, [type, orderData, langugeApp, currencyApp]);
 
   const sendDataToServer = e => {
     e.preventDefault();
@@ -41,19 +51,25 @@ const ContactForm = props => {
 
       setTimeout(() => {
         setProcess('wating');
-        setCustomerData({ action: action, customerName: '', customerPhone: '', customerLanguage: props.langugeApp.language });
+        setCustomerData({
+          customerAction,
+          customerName: '',
+          customerPhone: '',
+          customerLanguage: langugeApp.language,
+          customerCurrency: currencyApp,
+        });
         setSendFormBtnState(false);
         setInputDisabled(false);
 
-        if (props.setModalWindowState) {
-          props.setModalWindowState(modalWindowState => {
+        if (setModalWindowState) {
+          setModalWindowState(modalWindowState => {
             return { ...modalWindowState, display: false };
           });
         }
 
-        if (props.setFromDisplayBalconCalculator) {
-          props.setFromDisplayBalconCalculator('Balckon type');
-          props.setOrderBalcon({
+        if (setFromDisplayBalconCalculator) {
+          setFromDisplayBalconCalculator('Balckon type');
+          setOrderBalcon({
             balkonType: 0,
             balkonWidth: '',
             balkonHeight: '',
@@ -62,8 +78,8 @@ const ContactForm = props => {
           });
         }
 
-        if (props.setFromDisplayFinishingMaterialCalculator) {
-          props.setFromDisplayFinishingMaterialCalculator('Quantity Finishing Material');
+        if (setFromDisplayFinishingMaterialCalculator) {
+          setFromDisplayFinishingMaterialCalculator('Quantity Finishing Material');
         }
       }, 5000);
     } else {

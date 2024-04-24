@@ -1,39 +1,54 @@
-const useInitData = (langugeApp, type, orderData) => {
+const useInitData = (langugeApp, type, orderData, currencyApp) => {
   const textContactForm = langugeApp.textGeneralPagesComponents.textContactForm;
 
   let formText;
-  let action;
+  let customerAction;
 
   switch (type) {
     case 'callMeasure':
       formText = textContactForm.callMeasure;
-      action = 'Customer order: sizing manager';
+      customerAction = 'Order: sizing manager';
       break;
     case 'callMeBack':
       formText = textContactForm.callMeBack;
-      action = 'Customer order: phone call';
+      customerAction = 'Order: phone call';
       break;
     case 'orderOrderBalcon':
       formText = textContactForm.callMeasure;
-      action = 'Customer order: balcon manager';
+      customerAction = 'Order: balcon manager';
       break;
     case 'orderFinishingMaterial':
       formText = textContactForm.orderFinishingMaterial;
-      action = 'Customer order: finishing material';
+      customerAction = 'Order: finishing material';
       break;
   }
 
   let initData;
 
   if (orderData) {
-    initData = { ...orderData, action, customerName: '', customerPhone: '', customerLanguage: langugeApp.language };
+    initData = {
+      ...orderData,
+      customerAction,
+      customerTime: `${new Date()}`,
+      customerName: '',
+      customerPhone: '',
+      customerLanguage: langugeApp.language,
+      customerCurrency: currencyApp,
+    };
   } else {
-    initData = { action, customerName: '', customerPhone: '', customerLanguage: langugeApp.language };
+    initData = {
+      customerAction,
+      customerTime: `${new Date()}`,
+      customerName: '',
+      customerPhone: '',
+      customerLanguage: langugeApp.language,
+      customerCurrency: currencyApp,
+    };
   }
 
   return {
     formText,
-    action,
+    customerAction,
     initData,
   };
 };

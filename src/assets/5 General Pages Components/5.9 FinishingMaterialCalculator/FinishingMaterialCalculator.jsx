@@ -68,6 +68,7 @@ const FinishingMaterialCalculator = props => {
           orderData={orderFinishingMaterial}
           type="orderFinishingMaterial"
           langugeApp={props.langugeApp}
+          currencyApp={props.currencyApp}
           setModalWindowState={props.setModalWindowState}
           setFromDisplayFinishingMaterialCalculator={setFromDisplayFinishingMaterialCalculator}
         />

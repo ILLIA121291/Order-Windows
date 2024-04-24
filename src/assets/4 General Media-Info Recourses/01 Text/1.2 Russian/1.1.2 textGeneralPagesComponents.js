@@ -55,6 +55,7 @@ const textBalconCalculator = {
     placeholderHeight: 'Высота',
     millimeters: 'мм',
     btnNext: 'Далее',
+    infoMessSizeBalkon: 'Пожалуйста, укажите размер балкона.',
   },
   balkonProfile: {
     titel: {
@@ -73,6 +74,8 @@ const textBalconCalculator = {
       warm: 'Теплый',
     },
     btnNext: 'Далее',
+    infoMessGlazingType: 'Пожалуйста, выберите тип остекления',
+    infoMessProfilType: 'Пожалуйста, выберите тип профиля',
   },
 };
 

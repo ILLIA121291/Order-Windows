@@ -69,9 +69,8 @@ const textBalconCalculator = {
       warm: 'Warm',
     },
     btnNext: 'Next',
-    infoMessGlazingType: 'Please select glazing type', 
+    infoMessGlazingType: 'Please select glazing type',
     infoMessProfilType: 'Please select profile type',
-
   },
 };
 

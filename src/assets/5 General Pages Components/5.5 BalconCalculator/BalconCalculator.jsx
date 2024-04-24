@@ -9,7 +9,6 @@ const BalconCalculator = props => {
   const [formDisply, setFromDisplay] = useState('Balckon type');
 
   const [orderBalcon, setOrderBalcon] = useState({
-    action: 'Customer order balcon',
     balkonType: 0,
     balkonWidth: '',
     balkonHeight: '',
@@ -49,6 +48,7 @@ const BalconCalculator = props => {
           setFromDisplayBalconCalculator={setFromDisplay}
           setOrderBalcon={setOrderBalcon}
           langugeApp={props.langugeApp}
+          currencyApp={props.currencyApp}
         />
       );
       break;
