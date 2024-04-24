@@ -55,7 +55,9 @@ const textBalconCalculator = {
     placeholderHeight: 'Height',
     millimeters: 'mm',
     btnNext: 'Next',
+    infoMessSizeBalkon: 'Please indicate the size of the balcony.',
   },
+
   balkonProfile: {
     titel: {
       one: 'Calculator',
@@ -67,6 +69,9 @@ const textBalconCalculator = {
       warm: 'Warm',
     },
     btnNext: 'Next',
+    infoMessGlazingType: 'Please select glazing type', 
+    infoMessProfilType: 'Please select profile type',
+
   },
 };
 

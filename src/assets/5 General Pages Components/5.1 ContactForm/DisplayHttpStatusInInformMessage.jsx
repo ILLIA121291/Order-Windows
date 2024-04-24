@@ -1,34 +1,34 @@
 const DisplayHttpStatusInInformMessage = props => {
-  let displayHttpStatusInInformMessage;
+  let displayInformMessage;
 
   switch (props.process) {
     case 'loading':
-      displayHttpStatusInInformMessage = (
+      displayInformMessage = (
         <p className="contact-form__confidential" style={{ color: 'orange' }}>
           {props.textContactForm.statusLoading}
         </p>
       );
       break;
     case 'success':
-      displayHttpStatusInInformMessage = (
+      displayInformMessage = (
         <p className="contact-form__confidential" style={{ color: 'green' }}>
           {props.textContactForm.statusSuccess}
         </p>
       );
       break;
     case 'error':
-      displayHttpStatusInInformMessage = (
+      displayInformMessage = (
         <p className="contact-form__confidential" style={{ color: 'red' }}>
           {props.textContactForm.statusError}
         </p>
       );
       break;
     default:
-      displayHttpStatusInInformMessage = <p className="contact-form__confidential">{props.formText.infoMassege}</p>;
+      displayInformMessage = <p className="contact-form__confidential">{props.formText.infoMassege}</p>;
       break;
   }
 
-  return displayHttpStatusInInformMessage;
+  return displayInformMessage;
 };
 
 export default DisplayHttpStatusInInformMessage;
