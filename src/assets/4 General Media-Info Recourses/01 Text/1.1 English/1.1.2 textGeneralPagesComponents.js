@@ -35,7 +35,7 @@ const textContactForm = {
     action: 'Customer order finishing material',
     titelSmall: 'Order confirmation',
     titelBig: 'Enter your detail',
-    btnTitel: 'Order confirmation',
+    btnTitel: 'Order',
     infoMassege: 'We will call you back within 10 minutes',
   },
 };
@@ -73,12 +73,6 @@ const textBalconCalculator = {
   },
 };
 
-const textLanguagePanel = {
-  english: 'English',
-  russian: 'Russian',
-  japan: 'Japan',
-};
-
 const textFinishingMaterialCalculator = {
   btnNext: 'Next',
 
@@ -86,7 +80,7 @@ const textFinishingMaterialCalculator = {
     titel: 'Material calculator',
     materialName: 'Material name',
     materialSize: 'Material size',
-    materialDescription: 'Materal description',
+    materialDescription: 'Material description',
     price: 'Price',
     materialCost: 'Material cost',
     infoMassege: 'Please indicate the quantity of material',
@@ -118,7 +112,6 @@ const textGeneralPagesComponents = {
   textContactForm,
   textTimer,
   textBalconCalculator,
-  textLanguagePanel,
   textFinishingMaterialCalculator,
 };
 

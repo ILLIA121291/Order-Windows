@@ -30,6 +30,14 @@ const textContactForm = {
     btnTitel: 'オーダーコール',
     infoMassege: '10分以内に折り返しお電話させていただきます',
   },
+
+  orderFinishingMaterial: {
+    action: 'お客様オーダーの仕上げ材',
+    titelSmall: '注文の確認',
+    titelBig: '詳細を入力してください',
+    btnTitel: '注文',
+    infoMassege: '10分以内に折り返しお電話させていただきます',
+  },
 };
 
 const textTimer = {
@@ -71,10 +79,38 @@ const textBalconCalculator = {
   },
 };
 
-const textLanguagePanel = {
-  english: '英語',
-  russian: 'ロシア',
-  japan: '日本',
+const textFinishingMaterialCalculator = {
+  btnNext: '次',
+
+  textQuantityFinishingMaterial: {
+    titel: '材料計算機',
+    materialName: '材質名',
+    materialSize: '素材サイズ',
+    materialDescription: '材質の説明',
+    price: '価格',
+    materialCost: '材料費',
+    infoMassege: '材料の量を教えてください',
+  },
+
+  textDeliveryPaymentFinishingMaterial: {
+    titel: '配送と支払い',
+    payment: '支払い',
+    cash: '現金',
+    bankCard: 'バンクカード',
+    cashlessPayments: 'キャッシュレス決済',
+    delivery: '配達',
+    noDelivery: '配達なし',
+    cityDelivery: '市内配達無料',
+    cityOutsideDelivery: '市外配達',
+    deliveryAddress: '配送先住所',
+    orderCost: '注文コスト',
+    materialCost: '材料費',
+    deliveryCost: '配送料',
+    total: '合計',
+    infoMessPaymentType: 'お支払いタイプを選択してください',
+    infoMessDeliveryType: '配送タイプを選択してください',
+    infoMessDeliveryAddress: '配送先住所を入力してください',
+  },
 };
 
 const textGeneralPagesComponents = {
@@ -82,7 +118,7 @@ const textGeneralPagesComponents = {
   textContactForm,
   textTimer,
   textBalconCalculator,
-  textLanguagePanel,
+  textFinishingMaterialCalculator,
 };
 
 export default textGeneralPagesComponents;

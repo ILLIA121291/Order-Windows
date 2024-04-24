@@ -11,7 +11,6 @@ const textLanguagePanel = {
 };
 
 const LanguagePanel = props => {
-
   const onChangeLanguage = e => {
     switch (e.target.value) {
       case 'Russian':

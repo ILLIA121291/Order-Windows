@@ -30,6 +30,14 @@ const textContactForm = {
     btnTitel: 'Заказать звонок',
     infoMassege: 'Мы перезвоним вам в течение 10 минут',
   },
+
+  orderFinishingMaterial: {
+    action: 'Заказ от клиента на отделочные материалы',
+    titelSmall: 'Подтверждение заказа',
+    titelBig: 'Укажите ваши данные',
+    btnTitel: 'Заказать',
+    infoMassege: 'Мы перезвоним вам в течение 10 минут',
+  },
 };
 
 const textTimer = {
@@ -71,10 +79,38 @@ const textBalconCalculator = {
   },
 };
 
-const textLanguagePanel = {
-  english: 'Английский',
-  russian: 'Русский',
-  japan: 'Японский',
+const textFinishingMaterialCalculator = {
+  btnNext: 'Далее',
+
+  textQuantityFinishingMaterial: {
+    titel: 'Калькулятор материала',
+    materialName: 'Название материала',
+    materialSize: 'Размер материала',
+    materialDescription: 'Описание материала',
+    price: 'Цена',
+    materialCost: 'Стоимость материала',
+    infoMassege: 'Пожалуйста, укажите количество материала.',
+  },
+
+  textDeliveryPaymentFinishingMaterial: {
+    titel: 'Доставка и оплата',
+    payment: 'Оплата',
+    cash: 'Наличные',
+    bankCard: 'Банковской картой',
+    cashlessPayments: 'Безналичный расчет',
+    delivery: 'Доставка',
+    noDelivery: 'Без доставки',
+    cityDelivery: 'Доставка по городу бесплатно',
+    cityOutsideDelivery: 'Доставка за пределы города',
+    deliveryAddress: 'Адрес доставки',
+    orderCost: 'Стоимость заказа',
+    materialCost: 'Стоимость материала',
+    deliveryCost: 'Стоимость доставки',
+    total: 'Итого',
+    infoMessPaymentType: 'Пожалуйста, выберите тип оплаты',
+    infoMessDeliveryType: 'Пожалуйста, выберите тип доставки',
+    infoMessDeliveryAddress: 'Пожалуйста, введите адрес доставки',
+  },
 };
 
 const textGeneralPagesComponents = {
@@ -82,7 +118,7 @@ const textGeneralPagesComponents = {
   textContactForm,
   textTimer,
   textBalconCalculator,
-  textLanguagePanel,
+  textFinishingMaterialCalculator,
 };
 
 export default textGeneralPagesComponents;
