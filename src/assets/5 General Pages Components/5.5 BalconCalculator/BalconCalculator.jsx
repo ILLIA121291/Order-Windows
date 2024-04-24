@@ -12,12 +12,21 @@ const BalconCalculator = props => {
     balkonType: 0,
     balkonWidth: '',
     balkonHeight: '',
-    glazingType: 'Wooden glazing',
+    glazingType: '',
     profileType: '',
   });
 
-  let displyForm;
+  const showPreviousForm = () => {
+    if (formDisply == 'Contact form') {
+      setFromDisplay('Balckon glazing & profile');
+    }
 
+    if (formDisply == 'Balckon glazing & profile') {
+      setFromDisplay('Balckon type');
+    }
+  };
+
+  let displyForm;
   switch (formDisply) {
     case 'Balckon type':
       displyForm = (
@@ -54,7 +63,19 @@ const BalconCalculator = props => {
       break;
   }
 
-  return <div className="balkon-calculator__container">{displyForm}</div>;
+  return (
+    <div className="balkon-calculator__container">
+      <button
+        className="balkon-calculator__back-btn"
+        style={{ display: formDisply == 'Balckon type' ? 'none' : 'block' }}
+        onClick={() => showPreviousForm()}
+      >
+        <i className="balkon-calculator__back-btn-left"></i>
+      </button>
+
+      {displyForm}
+    </div>
+  );
 };
 
 export default BalconCalculator;

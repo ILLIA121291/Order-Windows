@@ -63,7 +63,14 @@ const textBalconCalculator = {
       one: 'Calculator',
       two: 'Select the type of glazing and its profile',
     },
-    options: ['Wooden glazing', 'Aluminum glazing', 'Glazing with plastic frames', 'Panoramic glazing', 'Glazing with extension'],
+    options: [
+      '-- Select --',
+      'Wooden glazing',
+      'Aluminum glazing',
+      'Glazing with plastic frames',
+      'Panoramic glazing',
+      'Glazing with extension',
+    ],
     radioTitel: {
       cold: 'Cold',
       warm: 'Warm',

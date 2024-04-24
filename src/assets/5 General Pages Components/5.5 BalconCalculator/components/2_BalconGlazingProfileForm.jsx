@@ -28,7 +28,7 @@ const BalconGlazingProfileForm = props => {
   };
 
   const displayNextForm = () => {
-    if (orderBalcon.glazingType != 'Wooden glazing' && orderBalcon.profileType != '') {
+    if (orderBalcon.glazingType != '' && orderBalcon.profileType != '') {
       setFromDisplay('Contact form');
     } else {
       checkingForm();
@@ -56,11 +56,12 @@ const BalconGlazingProfileForm = props => {
             })
           }
         >
-          <option value="Wooden">{textBalconCalculator.balkonProfile.options[0]}</option>
-          <option value="Aluminum">{textBalconCalculator.balkonProfile.options[1]}</option>
-          <option value="Glazing with plastic frames">{textBalconCalculator.balkonProfile.options[2]}</option>
-          <option value="Panoramic">{textBalconCalculator.balkonProfile.options[3]}</option>
-          <option value="Glazing with extension">{textBalconCalculator.balkonProfile.options[4]}</option>
+          <option value="">{textBalconCalculator.balkonProfile.options[0]}</option>
+          <option value="Wooden">{textBalconCalculator.balkonProfile.options[1]}</option>
+          <option value="Aluminum">{textBalconCalculator.balkonProfile.options[2]}</option>
+          <option value="Glazing with plastic frames">{textBalconCalculator.balkonProfile.options[3]}</option>
+          <option value="Panoramic">{textBalconCalculator.balkonProfile.options[4]}</option>
+          <option value="Glazing with extension">{textBalconCalculator.balkonProfile.options[5]}</option>
         </select>
         <p className="general-from-inform-message red-color" style={{ visibility: infoMessGlazingType ? 'visible' : 'hidden' }}>
           {textBalconCalculator.balkonProfile.infoMessGlazingType}
@@ -74,6 +75,7 @@ const BalconGlazingProfileForm = props => {
             type="radio"
             name="profileType"
             id="cold"
+            checked={orderBalcon.profileType == 'cold' ? true : false}
             onChange={e =>
               setOrderBalcon(orderBalcon => {
                 return { ...orderBalcon, [e.target.name]: e.target.id };
@@ -91,6 +93,7 @@ const BalconGlazingProfileForm = props => {
             type="radio"
             name="profileType"
             id="warm"
+            checked={orderBalcon.profileType == 'warm' ? true : false}
             onChange={e =>
               setOrderBalcon(orderBalcon => {
                 return { ...orderBalcon, [e.target.name]: e.target.id };

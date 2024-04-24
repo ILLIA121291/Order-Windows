@@ -86,6 +86,7 @@ const BalconTypeForm = props => {
               name="balkonHeight"
               type="number"
               placeholder={textBalconCalculator.balkonType.placeholderHeight}
+              value={orderBalcon.balkonHeight}
               onChange={e =>
                 setOrderBalcon(orderBalcon => {
                   return { ...orderBalcon, [e.target.name]: +e.target.value };

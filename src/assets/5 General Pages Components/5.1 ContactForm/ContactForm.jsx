@@ -73,7 +73,7 @@ const ContactForm = props => {
             balkonType: 0,
             balkonWidth: '',
             balkonHeight: '',
-            glazingType: 'Wooden glazing',
+            glazingType: '',
             profileType: '',
           });
         }
