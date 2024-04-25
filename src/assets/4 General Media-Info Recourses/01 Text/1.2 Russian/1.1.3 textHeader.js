@@ -5,6 +5,7 @@ const textHeader = {
     two: 'замерщика',
   },
   requestCallBackBtn: 'Заказать звонок',
+  headerMainInfoMessage: 'В консоли браузера вы можете получить ответы от сервера',
 };
 
 export default textHeader;

@@ -5,6 +5,7 @@ const textHeader = {
     two: '測定者',
   },
   requestCallBackBtn: 'コールバックをリクエストする',
+  headerMainInfoMessage: 'In the browser console you can get responses from the server',
 };
 
 export default textHeader;

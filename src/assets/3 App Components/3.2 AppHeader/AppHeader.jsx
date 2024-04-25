@@ -12,6 +12,7 @@ const AppHeader = props => {
 
   return (
     <header className="app-header">
+      <div className="general-container header-main-info-message">!!! {textHeader.headerMainInfoMessage} !!!</div>
       <div className="general-container app-header__container">
         <div className="app-header__logo">
           <img className="app-header__logo-img" src={logo} alt="Company logo" />
