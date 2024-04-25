@@ -18,3 +18,9 @@
     background-position: center;
   }
 }
+
+@media (max-width: 500px) {
+  .heder-section__titel {
+    font-size: 25px;
+  }
+}

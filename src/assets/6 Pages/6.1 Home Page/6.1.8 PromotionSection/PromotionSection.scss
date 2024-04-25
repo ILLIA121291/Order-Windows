@@ -1,6 +1,7 @@
 .promotion-section {
   height: 600px;
   background: url('./resources/img/bg.jpg') no-repeat;
+  background-position: center;
 
   &__container {
     height: 600px;
@@ -27,5 +28,47 @@
     font-size: 24px;
     line-height: 38.4px;
     margin-bottom: 80px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .promotion-section__contact-form {
+    display: none;
+  }
+
+  .promotion-section {
+    background-position: -300px 0px;
+  }
+}
+
+@media (max-width: 865px) {
+  .promotion-section {
+    background-position: -350px 0px;
+  }
+}
+
+@media (max-width: 800px) {
+  .promotion-section {
+    background: #f7f7f7;
+
+    &__container {
+      justify-content: center;
+    }
+
+    &__promotion {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .promotion-section__titel-discont {
+    font-size: 35px;
+  }
+
+  .promotion-section__titel-slogan {
+    font-size: 20px;
   }
 }

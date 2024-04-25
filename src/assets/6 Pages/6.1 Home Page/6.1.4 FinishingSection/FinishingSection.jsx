@@ -94,8 +94,9 @@ const FinishingMaterial = props => {
           );
         })}
       </ul>
-
-      <ContactForm type={'callMeasure'} langugeApp={props.langugeApp} />
+      <div className="finishing-material__contact-form">
+        <ContactForm type={'callMeasure'} langugeApp={props.langugeApp} />
+      </div>
     </div>
   );
 };

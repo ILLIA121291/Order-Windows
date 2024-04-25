@@ -10,14 +10,20 @@
   }
 
   &__goole-map {
-    width: 550px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
     overflow: hidden;
     margin-top: 30px;
+
+    &-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__list {
-    width: 450px;
+    max-width: 450px;
   }
 
   &__item {
@@ -28,8 +34,22 @@
       display: block;
       color: rgb(0, 137, 205);
       font-size: 15px;
-      line-height: 16.5px;
+      line-height: 120%;
       margin: 20px 0px 20px;
     }
+  }
+}
+
+@media (max-width: 1000px) {
+  .location-section__block {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .location-section__goole-map {
+    width: 350px;
+    height: 350px;
   }
 }

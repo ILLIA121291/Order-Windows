@@ -52,7 +52,7 @@ const AppHeader = props => {
           <p className="app-header__phone-text">
             {textGeneralInformation.telphone}
             <br />
-            <a
+            <p
               className="app-header__phone-link"
               href="#"
               onClick={() =>
@@ -67,7 +67,7 @@ const AppHeader = props => {
               }
             >
               {textHeader.requestCallBackBtn}
-            </a>
+            </p>
           </p>
         </div>
       </div>

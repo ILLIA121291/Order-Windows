@@ -1,6 +1,6 @@
 import './LocationSection.scss';
 import SectionHedar from '../6.1.0 Page General Components/1.4 SectionHedar/SectionHedar';
-import GoogleMap from '../../../5 General Pages Components/5.3 GoogleMap/GoogleMap';
+import GoogleMapImg from './resources/googleMap.png';
 
 const LocationSection = props => {
   const textLocationSection = props.langugeApp.textHomePage.textLocationSection;
@@ -22,7 +22,9 @@ const LocationSection = props => {
       <div className="general-container location-section__container">
         <SectionHedar titel={textLocationSection.titel} />
         <div className="location-section__block">
-          <div className="location-section__goole-map">{/* <GoogleMap /> */}</div>
+          <div className="location-section__goole-map">
+            <img className="location-section__goole-map-img" src={GoogleMapImg} alt="" />
+          </div>
           <ul className="location-section__list">
             {arrLocationInfo.map((info, i) => {
               return (

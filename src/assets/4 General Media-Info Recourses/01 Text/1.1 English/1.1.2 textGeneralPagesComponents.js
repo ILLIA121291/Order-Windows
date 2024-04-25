@@ -1,6 +1,6 @@
 const textBlueCircles = [
-  ['High', 'quality'],
-  ['Quick', 'installation'],
+  ['High quality'],
+  ['Quick installation'],
   ['3 year', 'warranty'],
   ['Garbage', 'removal'],
 ];

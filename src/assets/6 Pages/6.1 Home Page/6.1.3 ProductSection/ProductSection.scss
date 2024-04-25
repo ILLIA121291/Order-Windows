@@ -40,9 +40,13 @@
     }
   }
 
-  &_img {
-    width: 466px;
+  &__img {
+    width: 450px;
     height: 300px;
+  }
+
+  &__list-container {
+    width: 450px;
   }
 
   &__list {
@@ -59,14 +63,14 @@
     align-items: center;
 
     font-size: 14px;
-    line-height: 29.4px;
+    line-height: 200%;
   }
 
   &__list-item::before {
     content: ' ';
     width: 25px;
     height: 25px;
-    margin-right: 17px;
+    margin-right: 10px;
     background: url('./resources/check.png');
 
     display: flex;
@@ -109,18 +113,34 @@
   }
 }
 
-// Animation
-
-.faded {
-  animation-name: faded;
-  animation-duration: 1500ms;
+@media (max-width: 1200px) {
+  .product-demo {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-@keyframes faded {
-  0% {
-    opacity: 0.1;
-  }
-  100% {
-    opacity: 1;
+@media (max-width: 500px) {
+  .product-demo {
+    &__img {
+      width: 350px;
+      height: 200px;
+    }
+
+    &__list-container {
+      width: 350px;
+    }
+
+    &__calculate {
+      flex-direction: column;
+
+      &-titel {
+        text-align: center;
+      }
+
+      &-btn {
+        margin-top: 15px;
+      }
+    }
   }
 }

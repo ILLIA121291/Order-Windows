@@ -42,15 +42,17 @@ const ProductDemo = props => {
           <div className={`product-demo__product ${bdColor} `} key={index}>
             <h4 className={`product-demo__titel ${titelColor}`}>{titel}</h4>
             <img className="product-demo__img" src={img} alt={titel} />
-            <ul className="product-demo__list">
-              {description.map((value, index) => {
-                return (
-                  <li className="product-demo__list-item" key={index}>
-                    {value}
-                  </li>
-                );
-              })}
-            </ul>
+            <div className="product-demo__list-container">
+              <ul className="product-demo__list">
+                {description.map((value, index) => {
+                  return (
+                    <li className="product-demo__list-item" key={index}>
+                      {value}
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
             <div className="product-demo__calculate">
               <p className="product-demo__calculate-titel">
                 <span className="product-demo__calculate-titel-accent">

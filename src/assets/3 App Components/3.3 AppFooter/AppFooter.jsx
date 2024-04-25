@@ -15,8 +15,9 @@ const StillQuestions = props => {
   return (
     <div className="app-footer__still-questions">
       <div className="general-container app-footer__still-questions__container">
-        <h3 className="app-footer__still-questions-titel">
+        <p className="app-footer__still-questions-titel">
           {props.textFooter.blueBlock.titel.one}
+          </p>
           <button
             className="app-footer__still-questions-btn"
             onClick={() =>
@@ -32,7 +33,7 @@ const StillQuestions = props => {
           >
             {props.textFooter.blueBlock.titel.two}
           </button>
-        </h3>
+        
       </div>
     </div>
   );
@@ -43,7 +44,6 @@ const Footer = props => {
   return (
     <div className="app-footer-footer">
       <div className="general-container app-footer-footer__container">
-        <div className="app-footer-footer__div"></div>
         <img className="app-footer-footer__img" src={logo} alt="" />
         <h4 className="app-footer-footer__titel">
           {textGeneralInformation.telphone} <br />

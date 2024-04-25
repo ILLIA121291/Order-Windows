@@ -13,9 +13,11 @@ const PromotionSection = props => {
           <p className="promotion-section__titel-slogan">
             {textPromotionSection.slogan[0]} <br /> {textPromotionSection.slogan[1]}
           </p>
-          <Timer deadline={'2024-11-18T00:00:00'}  langugeApp={props.langugeApp}/>
+          <Timer deadline={'2024-11-18T00:00:00'} langugeApp={props.langugeApp} />
         </div>
-        <ContactForm type={'callMeasure'} langugeApp={props.langugeApp}/>
+        <div className="promotion-section__contact-form">
+          <ContactForm type={'callMeasure'} langugeApp={props.langugeApp} />
+        </div>
       </div>
     </section>
   );

@@ -1,8 +1,9 @@
 .slider {
   margin-top: 80px;
-  width: 1170px;
+  max-width: 1170px;
   user-select: none;
   display: flex;
+  border: 1px solid #000;
 
   &__change-btns {
     width: 50px;
@@ -22,6 +23,7 @@
     width: 1070px;
     overflow: hidden;
     display: flex;
+    justify-content: center;
 
     &__list {
       width: fit-content;
@@ -85,3 +87,9 @@
     }
   }
 }
+
+// @media(max-width:1200px) {
+//   .slider {
+//     width: ;
+//   }
+// }
