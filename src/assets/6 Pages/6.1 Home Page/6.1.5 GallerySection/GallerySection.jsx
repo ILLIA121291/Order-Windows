@@ -53,7 +53,11 @@ const GallerySection = props => {
                     return {
                       ...modalWindowState,
                       component: 'DisplayImage',
-                      componentType: arrImgsBig[index],
+                      componentType: {
+                        displayImgIndex: index,
+                        arrImg: arrImgsBig,
+                        displayBtns: true,
+                      },
                       display: true,
                     };
                   })
