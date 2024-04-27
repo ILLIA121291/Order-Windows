@@ -1,11 +1,11 @@
 import './FinishingMaterialCalculator.scss';
 
-import mainFinishingData from '../../4 General Media-Info Recourses/02 mainDataApp/mainFinishingData';
-import useDisplayPriceInCurrency from '../../1 Utilities/useDisplayPriceInCurrency';
-import { useState } from 'react';
-import ContactForm from '../5.1 ContactForm/ContactForm';
-import QuantityFinishingMaterial from './components/1_QuantityFinishingMaterial';
-import DeliveryPaymentFinishingMaterial from './components/2_DeliveryPaymentFinishingMaterial';
+import mainFinishingData from '../../../4 General Media-Info Recourses/02 mainDataApp/mainFinishingData';
+import useDisplayPriceInCurrency from '../../../1 Utilities/useDisplayPriceInCurrency';
+import { useEffect, useState } from 'react';
+import ContactForm from '../../5.1 ContactForm/ContactForm';
+import QuantityFinishingMaterial from '../5.9.2 QuantityFinishingMaterial/QuantityFinishingMaterial';
+import DeliveryPaymentFinishingMaterial from '../5.9.3 DeliveryPaymentFinishingMaterial/DeliveryPaymentFinishingMaterial';
 
 const FinishingMaterialCalculator = props => {
   const textFinishingMaterialCalculator = props.langugeApp.textGeneralPagesComponents.textFinishingMaterialCalculator;
@@ -29,6 +29,22 @@ const FinishingMaterialCalculator = props => {
     paymentType: '',
     orderCurrency: props.currencyApp,
   });
+
+  useEffect(() => {
+    setOrderFinishingMaterial({
+      materialGroup: mainFinishingData[materialGroup].chapter,
+      materialName: selectedMaterialData.name,
+      materialQtyPrice: useDisplayPriceInCurrency(props.currencyApp, selectedMaterialData.price),
+      materialQty: 0,
+      materialCost: 0,
+      deliveryType: '',
+      deliveryCost: '0',
+      deliveryAddress: '',
+      orderAmount: '',
+      paymentType: '',
+      orderCurrency: props.currencyApp,
+    });
+  }, [props.componentType]);
 
   const [FromDisplayFinishingMaterialCalculator, setFromDisplayFinishingMaterialCalculator] =
     useState('Quantity Finishing Material');
@@ -80,6 +96,7 @@ const FinishingMaterialCalculator = props => {
           currencyApp={props.currencyApp}
           setModalWindowState={props.setModalWindowState}
           setFromDisplayFinishingMaterialCalculator={setFromDisplayFinishingMaterialCalculator}
+          setOrderFinishingMaterial={setOrderFinishingMaterial}
         />
       );
       break;

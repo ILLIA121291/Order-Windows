@@ -16,6 +16,7 @@ const ContactForm = props => {
     setFromDisplayBalconCalculator,
     setOrderBalcon,
     setFromDisplayFinishingMaterialCalculator,
+    setOrderFinishingMaterial,
   } = props;
   const textContactForm = langugeApp.textGeneralPagesComponents.textContactForm;
 
@@ -68,18 +69,22 @@ const ContactForm = props => {
         }
 
         if (setFromDisplayBalconCalculator) {
-          setFromDisplayBalconCalculator('Balckon type');
-          setOrderBalcon({
-            balkonType: 0,
-            balkonWidth: '',
-            balkonHeight: '',
-            glazingType: '',
-            profileType: '',
-          });
+          setTimeout(() => {
+            setFromDisplayBalconCalculator('Balckon type');
+            setOrderBalcon({
+              balkonType: 0,
+              balkonWidth: '',
+              balkonHeight: '',
+              glazingType: '',
+              profileType: '',
+            });
+          }, 300);
         }
 
         if (setFromDisplayFinishingMaterialCalculator) {
-          setFromDisplayFinishingMaterialCalculator('Quantity Finishing Material');
+          setTimeout(() => {
+            setFromDisplayFinishingMaterialCalculator('Quantity Finishing Material');
+          }, 300);
         }
       }, 5000);
     } else {

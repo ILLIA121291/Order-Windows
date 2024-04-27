@@ -1,0 +1,54 @@
+.delivery-payment-material {
+  &__titel {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 50px 0px 10px;
+    text-align: center;
+
+    &-small {
+      line-height: 120%;
+      font-weight: 700;
+      font-size: 16px;
+      text-align: center;
+      color: rgb(123, 148, 169);
+    }
+  }
+
+  &__list {
+    width: 300px;
+  }
+
+  &__item {
+    margin-top: 10px;
+
+    display: flex;
+    align-items: center;
+
+    line-height: 120%;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  &__radio {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  &__delivery-address {
+    width: 300px;
+    height: 70px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid rgb(102, 175, 233);
+    box-shadow: 0px 0px 5px rgb(102, 175, 233);
+    background: #fff;
+    resize: none;
+  }
+
+  &__delivery-address:disabled {
+    border: 1px solid rgb(236, 238, 240);
+    box-shadow: 0px 0px 5px rgb(228, 229, 231);
+  }
+}

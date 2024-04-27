@@ -4,7 +4,7 @@ import ContactForm from '../5.1 ContactForm/ContactForm';
 import BalconCalculator from '../5.5 BalconCalculator/5.5.1 BalconCalculator/BalconCalculator';
 
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-import FinishingMaterialCalculator from '../5.9 FinishingMaterialCalculator/FinishingMaterialCalculator';
+import FinishingMaterialCalculator from '../5.9 FinishingMaterialCalculator/5.9.1 FinishingMaterialCalculator/FinishingMaterialCalculator';
 import DisplayImage from '../5.10 DisplayImage/DisplayImage';
 
 const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp, currencyApp }) => {

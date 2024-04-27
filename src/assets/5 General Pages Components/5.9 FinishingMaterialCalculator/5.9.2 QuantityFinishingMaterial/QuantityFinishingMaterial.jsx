@@ -1,5 +1,7 @@
+import './QuantityFinishingMaterial.scss';
+
 import { useEffect, useState } from 'react';
-import useDisplayPriceInCurrency from "../../../1 Utilities/useDisplayPriceInCurrency";
+import useDisplayPriceInCurrency from '../../../1 Utilities/useDisplayPriceInCurrency';
 import useDisplayMaterialCost from '../../../1 Utilities/useDisplayMaterialCost';
 
 const QuantityFinishingMaterial = props => {
@@ -24,7 +26,7 @@ const QuantityFinishingMaterial = props => {
   }, [orderFinishingMaterial]);
 
   return (
-    <div className="quantity-material">
+    <>
       <h2 className="quantity-material__titel">{textQuantityFinishingMaterial.titel}</h2>
       <img className="quantity-material__img" src={selectedMaterialData.img} alt={selectedMaterialText.name} />
       <p className="quantity-material__general">
@@ -124,8 +126,8 @@ const QuantityFinishingMaterial = props => {
       >
         {textFinishingMaterialCalculator.btnNext}
       </button>
-    </div>
+    </>
   );
 };
 
-export default QuantityFinishingMaterial 
+export default QuantityFinishingMaterial;

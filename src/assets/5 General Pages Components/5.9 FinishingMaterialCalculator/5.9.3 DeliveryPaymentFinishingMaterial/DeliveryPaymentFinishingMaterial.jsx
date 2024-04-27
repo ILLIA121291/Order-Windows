@@ -1,3 +1,5 @@
+import './DeliveryPaymentFinishingMaterial.scss';
+
 import { useEffect, useState } from 'react';
 import useDisplayPriceInCurrency from '../../../1 Utilities/useDisplayPriceInCurrency';
 import useMathOperationsWithPrice from '../../../1 Utilities/useMathOperationsWithPrice';
@@ -71,7 +73,7 @@ const DeliveryPaymentFinishingMaterial = props => {
   }, [orderFinishingMaterial]);
 
   return (
-    <div className="delivery-payment-material">
+    <>
       <h2 className="delivery-payment-material__titel">{textDeliveryPaymentFinishingMaterial.titel}</h2>
       <p className="delivery-payment-material__titel-small">{textDeliveryPaymentFinishingMaterial.payment}</p>
       <ul className="delivery-payment-material__list">
@@ -248,7 +250,7 @@ const DeliveryPaymentFinishingMaterial = props => {
       >
         {textFinishingMaterialCalculator.btnNext}
       </button>
-    </div>
+    </>
   );
 };
 
