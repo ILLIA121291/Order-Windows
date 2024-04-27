@@ -1,7 +1,7 @@
 import './ModalWindow.scss';
 
 import ContactForm from '../5.1 ContactForm/ContactForm';
-import BalconCalculator from '../5.5 BalconCalculator/BalconCalculator';
+import BalconCalculator from '../5.5 BalconCalculator/5.5.1 BalconCalculator/BalconCalculator';
 
 import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 import FinishingMaterialCalculator from '../5.9 FinishingMaterialCalculator/FinishingMaterialCalculator';

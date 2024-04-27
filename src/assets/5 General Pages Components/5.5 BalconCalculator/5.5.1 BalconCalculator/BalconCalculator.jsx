@@ -1,8 +1,8 @@
 import './BalconCalculator.scss';
 import { useState } from 'react';
-import BalconTypeForm from './components/1_BalconTypeForm';
-import BalconGlazingProfileForm from './components/2_BalconGlazingProfileForm';
-import ContactForm from '../5.1 ContactForm/ContactForm';
+import BalconTypeForm from '../5.5.2 BalconTypeForm/BalconTypeForm';
+import BalconGlazingProfileForm from '../5.5.3 BalconGlazingProfileForm/BalconGlazingProfileForm';
+import ContactForm from '../../5.1 ContactForm/ContactForm';
 
 const BalconCalculator = props => {
   const textBalconCalculator = props.langugeApp.textGeneralPagesComponents.textBalconCalculator;
@@ -70,7 +70,7 @@ const BalconCalculator = props => {
         style={{ display: formDisply == 'Balckon type' ? 'none' : 'block' }}
         onClick={() => showPreviousForm()}
       >
-        <i className="balkon-calculator__back-btn-left"></i>
+        <i className="balkon-calculator__back-btn-icon"></i>
       </button>
 
       {displyForm}

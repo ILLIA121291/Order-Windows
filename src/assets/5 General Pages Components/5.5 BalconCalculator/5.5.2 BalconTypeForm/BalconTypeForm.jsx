@@ -1,15 +1,17 @@
+import './BalconTypeForm.scss';
+
 import { useEffect, useState } from 'react';
-import balkonIcon_1 from '../resources/balkon/ba_01.png';
-import balkonIcon_2 from '../resources/balkon/ba_02.png';
-import balkonIcon_3 from '../resources/balkon/ba_03.png';
-import balkonIcon_4 from '../resources/balkon/ba_04.png';
+import balkonIcon_1 from './resources/balkon/ba_01.png';
+import balkonIcon_2 from './resources/balkon/ba_02.png';
+import balkonIcon_3 from './resources/balkon/ba_03.png';
+import balkonIcon_4 from './resources/balkon/ba_04.png';
 
 const arrBalkonIcons = [balkonIcon_1, balkonIcon_2, balkonIcon_3, balkonIcon_4];
 
-import balkonImg_1 from '../resources/balkon/type1.png';
-import balkonImg_2 from '../resources/balkon/type2.png';
-import balkonImg_3 from '../resources/balkon/type3.png';
-import balkonImg_4 from '../resources/balkon/type4.png';
+import balkonImg_1 from './resources/balkon/type1.png';
+import balkonImg_2 from './resources/balkon/type2.png';
+import balkonImg_3 from './resources/balkon/type3.png';
+import balkonImg_4 from './resources/balkon/type4.png';
 
 const arrBalkonImg = [balkonImg_1, balkonImg_2, balkonImg_3, balkonImg_4];
 
@@ -39,7 +41,7 @@ const BalconTypeForm = props => {
   }, [orderBalcon]);
 
   return (
-    <div className="balkon-type">
+    <>
       <h2 className="balkon-type__titel">{textBalconCalculator.balkonType.titel.one}</h2>
       <p className="balkon-type__slogon">{textBalconCalculator.balkonType.titel.two}</p>
       <ul className="balkon-type__icon-list">
@@ -59,7 +61,9 @@ const BalconTypeForm = props => {
           );
         })}
       </ul>
-      <img className="balkon-type__main-img" src={arrBalkonImg[orderBalcon.balkonType]} alt="Balkon type img" />
+      <div className="balkon-type__main-img-container">
+        <img className="balkon-type__main-img" src={arrBalkonImg[orderBalcon.balkonType]} alt="Balkon type img" />
+      </div>
       <form className="balkon-type__form">
         <div className="balkon-type__input-container">
           <label className="balkon-type__input-label">
@@ -109,7 +113,7 @@ const BalconTypeForm = props => {
           {textBalconCalculator.balkonType.btnNext}
         </button>
       </form>
-    </div>
+    </>
   );
 };
 

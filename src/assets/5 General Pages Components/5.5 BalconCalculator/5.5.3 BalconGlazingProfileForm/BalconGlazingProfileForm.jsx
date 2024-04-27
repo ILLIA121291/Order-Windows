@@ -1,6 +1,8 @@
+import './BalconGlazingProfileForm.scss';
+
 import { useState, useEffect } from 'react';
-import coldIcon from '../resources/icon_cold.png';
-import warmIcon from '../resources/icon_warm.png';
+import coldIcon from './resources/icon_cold.png';
+import warmIcon from './resources/icon_warm.png';
 
 const BalconGlazingProfileForm = props => {
   const { setOrderBalcon, orderBalcon, setFromDisplay, textBalconCalculator } = props;
@@ -42,7 +44,7 @@ const BalconGlazingProfileForm = props => {
   }, [orderBalcon]);
 
   return (
-    <div className="balkon-profile">
+    <>
       <h2 className="balkon-profile__titel">{textBalconCalculator.balkonProfile.titel.one}</h2>
       <p className="balkon-profile__slogon">{textBalconCalculator.balkonProfile.titel.two}</p>
       <form className="balkon-profile__form">
@@ -117,7 +119,7 @@ const BalconGlazingProfileForm = props => {
           {textBalconCalculator.balkonProfile.btnNext}
         </button>
       </form>
-    </div>
+    </>
   );
 };
 
