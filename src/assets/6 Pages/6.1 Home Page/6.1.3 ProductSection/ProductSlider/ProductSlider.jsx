@@ -4,28 +4,46 @@ import { useState } from 'react';
 import mainProductsData from '../../../../4 General Media-Info Recourses/02 mainDataApp/mainProductsData';
 
 const ProductSlider = props => {
-  const arrImg = mainProductsData.slice(1);
-  const widthWindowSlider = 170;
+  const arrSlides = mainProductsData.slice(1);
+  const widthWindowSlider = 150;
 
   const [offset, setOffset] = useState(0);
 
-  const nextSlide = () => {
-    if (offset === widthWindowSlider * (arrImg.length - 5)) {
-      setOffset(offset => widthWindowSlider * (arrImg.length - 5));
-    } else {
-      setOffset(offset => (offset += widthWindowSlider));
-    }
-  };
+  const sliderWindowWidth = document.documentElement.clientWidth;
+
+  let notDisplaySlides;
+
+  if (sliderWindowWidth >= 400 && sliderWindowWidth <= 519) {
+    notDisplaySlides = 3;
+  }
+
+  if (sliderWindowWidth >= 520 && sliderWindowWidth <= 599) {
+    notDisplaySlides = 2;
+  }
+
+  if (sliderWindowWidth >= 670 && sliderWindowWidth <= 799) {
+    notDisplaySlides = 1;
+  }
+
+  const [slidesNotDisplay, setSlidesNotDisplay] = useState(notDisplaySlides);
 
   const previousSlide = () => {
     if (offset === 0) {
       setOffset(offset => 0);
     } else {
       setOffset(offset => (offset -= widthWindowSlider));
+      setSlidesNotDisplay(slidesNotDisplay => (slidesNotDisplay += 1));
     }
   };
 
-  const imgsDisplay = arrImg.map((product, index) => {
+  const nextSlide = () => {
+    if (slidesNotDisplay > 0) {
+      setOffset(offset => (offset += widthWindowSlider));
+      setSlidesNotDisplay(slidesNotDisplay => (slidesNotDisplay -= 1));
+    }
+  };
+
+  const slidesDisplay = arrSlides.map((product, index) => {
     const activeProduct = props.displayTab == index + 1 ? 'slider-window__item-titel-active' : 'slider-window__item-titel';
 
     return (
@@ -50,7 +68,7 @@ const ProductSlider = props => {
       </button>
       <div className="slider-window">
         <ul className="slider-window__list" style={{ transform: `translateX(-${offset}px)` }}>
-          {imgsDisplay}
+          {slidesDisplay}
         </ul>
       </div>
       <button
