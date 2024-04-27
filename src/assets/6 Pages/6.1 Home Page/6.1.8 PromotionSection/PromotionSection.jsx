@@ -19,6 +19,9 @@ const PromotionSection = props => {
           <ContactForm type={'callMeasure'} langugeApp={props.langugeApp} />
         </div>
       </div>
+      <div className="general-container promotion-section__mobile-contact-from">
+        <ContactForm type={'callMeasure'} langugeApp={props.langugeApp} />
+      </div>
     </section>
   );
 };

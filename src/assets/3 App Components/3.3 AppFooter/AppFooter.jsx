@@ -15,25 +15,22 @@ const StillQuestions = props => {
   return (
     <div className="app-footer__still-questions">
       <div className="general-container app-footer__still-questions__container">
-        <p className="app-footer__still-questions-titel">
-          {props.textFooter.blueBlock.titel.one}
-          </p>
-          <button
-            className="app-footer__still-questions-btn"
-            onClick={() =>
-              props.setModalWindowState(modalWindowState => {
-                return {
-                  ...modalWindowState,
-                  component: 'ContactForm',
-                  componentType: 'callMeBack',
-                  display: true,
-                };
-              })
-            }
-          >
-            {props.textFooter.blueBlock.titel.two}
-          </button>
-        
+        <p className="app-footer__still-questions-titel">{props.textFooter.blueBlock.titel.one}</p>
+        <button
+          className="app-footer__still-questions-btn"
+          onClick={() =>
+            props.setModalWindowState(modalWindowState => {
+              return {
+                ...modalWindowState,
+                component: 'ContactForm',
+                componentType: 'callMeBack',
+                display: true,
+              };
+            })
+          }
+        >
+          {props.textFooter.blueBlock.titel.two}
+        </button>
       </div>
     </div>
   );

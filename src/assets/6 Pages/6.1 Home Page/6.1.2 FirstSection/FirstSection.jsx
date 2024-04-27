@@ -24,6 +24,9 @@ const FirstSection = props => {
           <ContactForm type={'callMeasure'} langugeApp={props.langugeApp} />
         </div>
       </div>
+      <div className="general-container first-section__mobile-contact-from">
+        <ContactForm type={'callMeasure'} langugeApp={props.langugeApp} />
+      </div>
     </section>
   );
 };

@@ -1,8 +1,11 @@
 .first-section {
   background: url('./img/bg.png') no-repeat;
   background-position: center;
-  height: 640px;
   overflow: hidden;
+
+  &__mobile-contact-from {
+    display: none;
+  }
 
   &__container {
     height: 640px;
@@ -45,6 +48,13 @@
 
     &__right {
       display: none;
+    }
+
+    &__mobile-contact-from {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      background: #f7f7f7;
     }
   }
 }

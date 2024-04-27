@@ -50,13 +50,19 @@ const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp, curren
   }
 
   const closeModalWindow = () => {
-    setModalWindowState({
-      component: '',
-      componentType: '',
-      display: false,
-      closeOverlay: true,
-      closeEscapeBtn: true,
+    setModalWindowState(modalWindowState => {
+      return { ...modalWindowState, display: false };
     });
+
+    setTimeout(() => {
+      setModalWindowState({
+        component: '',
+        componentType: '',
+        display: false,
+        closeOverlay: true,
+        closeEscapeBtn: true,
+      });
+    }, 300);
   };
 
   const onCloseModalWindowClickOverlay = e => {
@@ -76,12 +82,16 @@ const ModalWindow = ({ modalWindowState, setModalWindowState, langugeApp, curren
 
   return (
     <>
-      <div className={`modal-window__overlay ${display ? '' : ' modal-window__hidden'}`} onClick={onCloseModalWindowClickOverlay}>
-        <div className="modal-window__container">
-          <div className="modal-window">{displayComponent}</div>
+      <div
+        className={`modal-window__overlay ${display ? '' : ' modal-window__hidden'}`}
+        onClick={e => onCloseModalWindowClickOverlay(e)}
+      >
+        <div className="modal-window">
           <button onClick={() => closeModalWindow()} className="modal-window__close-btn">
             X
           </button>
+
+          {displayComponent}
         </div>
       </div>
     </>
