@@ -55,3 +55,17 @@
     background-color: #c6c64622;
   }
 }
+
+@media (max-width: 750px) {
+  .display-img {
+    width: 500px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 530px) {
+  .display-img {
+    width: 390px;
+    height: 390px;
+  }
+}
