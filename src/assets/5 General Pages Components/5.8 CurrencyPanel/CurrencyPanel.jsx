@@ -19,26 +19,19 @@ const CurrencyPanel = props => {
   };
 
   return (
-    <select className="general-select currency-panel__select" name="currency" onChange={e => onChangeCurrency(e)}>
-      <option
-        className="currency-panel__select-option"
-        value="USD"
-        selected={localStorage.getItem('currency') == 'USD' ? true : false}
-      >
+    <select
+      className="general-select currency-panel__select"
+      value={localStorage.getItem('currency')}
+      name="currency"
+      onChange={e => onChangeCurrency(e)}
+    >
+      <option className="currency-panel__select-option" value="USD">
         USD
       </option>
-      <option
-        className="currency-panel__select-option"
-        value="EUR"
-        selected={localStorage.getItem('currency') == 'EUR' ? true : false}
-      >
+      <option className="currency-panel__select-option" value="EUR">
         EUR
       </option>
-      <option
-        className="currency-panel__select-option"
-        value="JPY"
-        selected={localStorage.getItem('currency') == 'JPY' ? true : false}
-      >
+      <option className="currency-panel__select-option" value="JPY">
         JPY
       </option>
     </select>

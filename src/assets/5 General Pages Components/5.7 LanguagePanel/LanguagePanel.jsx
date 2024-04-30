@@ -29,26 +29,19 @@ const LanguagePanel = props => {
   };
 
   return (
-    <select className="general-select language-panel__select" name="language" onChange={e => onChangeLanguage(e)}>
-      <option
-        className="language-panel__select-option"
-        value="English"
-        selected={localStorage.getItem('language') == 'English' ? true : false}
-      >
+    <select
+      className="general-select language-panel__select"
+      name="language"
+      value={localStorage.getItem('language')}
+      onChange={e => onChangeLanguage(e)}
+    >
+      <option className="language-panel__select-option" value="English">
         {textLanguagePanel.english}
       </option>
-      <option
-        className="language-panel__select-option"
-        value="Russian"
-        selected={localStorage.getItem('language') == 'Russian' ? true : false}
-      >
+      <option className="language-panel__select-option" value="Russian">
         {textLanguagePanel.russian}
       </option>
-      <option
-        className="language-panel__select-option"
-        value="Japan"
-        selected={localStorage.getItem('language') == 'Japan' ? true : false}
-      >
+      <option className="language-panel__select-option" value="Japan">
         {textLanguagePanel.japan}
       </option>
     </select>
