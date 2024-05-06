@@ -32,6 +32,7 @@ if (!localStorage.getItem('language')) {
 let initialCurrency;
 if (!localStorage.getItem('currency')) {
   localStorage.setItem('currency', 'USD');
+  initialCurrency = 'USD';
 } else {
   switch (localStorage.getItem('currency')) {
     case 'USD':
@@ -73,7 +74,7 @@ function App() {
         modalWindowState={modalWindowState}
         setModalWindowState={setModalWindowState}
         langugeApp={langugeApp}
-        currencyApp={currencyApp} 
+        currencyApp={currencyApp}
       />
     </div>
   );
