@@ -15,3 +15,5 @@ This application has a responsive design and can work on mobile devices and comp
 This application consists of 1 pages:
 
 - Home page
+
+*** Perhaps the application works a little slowly, this is because for the demonstration I use a free plan from Vercel.
