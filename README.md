@@ -9,3 +9,7 @@ React v. 18.2.0
 Scss
 Vite
 Git
+
+This application consists of 1 pages:
+
+- Home page
